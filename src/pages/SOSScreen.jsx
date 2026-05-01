@@ -38,7 +38,12 @@ export default function SOSScreen({ onBack }) {
       {/* Header */}
       {!active && (
         <header className="fixed top-0 left-0 w-full z-50 flex items-center px-6 py-4 h-16 bg-background/80 backdrop-blur-md">
-          <button onClick={onBack} className="material-symbols-outlined text-slate-400">arrow_back</button>
+          <button 
+            onClick={onBack} 
+            className="w-11 h-11 flex items-center justify-center rounded-full bg-slate-50 text-slate-500 active:scale-90 transition-all shadow-sm"
+          >
+            <span className="material-symbols-outlined">arrow_back</span>
+          </button>
           <span className="ml-3 text-xl font-bold text-primary">Kembali</span>
         </header>
       )}
@@ -60,7 +65,7 @@ export default function SOSScreen({ onBack }) {
 
             <button 
               onClick={startBreathing}
-              className="w-full py-5 bg-primary text-white rounded-[24px] font-bold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-transform"
+              className="w-full py-5 bg-primary text-white rounded-[28px] font-bold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-transform"
             >
               Mulai Napas 4-7-8
             </button>

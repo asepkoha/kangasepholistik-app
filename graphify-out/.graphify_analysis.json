@@ -1,0 +1,252 @@
+{
+  "communities": {
+    "0": [
+      "app_app",
+      "app_component",
+      "homescreen_card",
+      "homescreen_component",
+      "idb_storage",
+      "index_css_tokens",
+      "materiscreen_card",
+      "misiscreen_card",
+      "misiscreen_component",
+      "profilescreen_card",
+      "profilescreen_component",
+      "src_app_jsx",
+      "useappstate_useappstate"
+    ],
+    "1": [
+      "journalscreen_journalscreen",
+      "journalscreen_scoreslider",
+      "src_pages_journalscreen_jsx",
+      "src_utils_xp_js",
+      "xp_calcdaynumber",
+      "xp_calcxp"
+    ],
+    "2": [
+      "src_pages_successscreen_jsx",
+      "successscreen_firecelebration",
+      "successscreen_starring",
+      "successscreen_successscreen",
+      "successscreen_xpcounter"
+    ],
+    "3": [
+      "lessons_getlessonbyday",
+      "misiscreen_misiscreen",
+      "src_data_lessons_js",
+      "src_pages_misiscreen_jsx"
+    ],
+    "4": [
+      "materials_getallmaterials",
+      "materials_getmaterialbyid",
+      "src_data_materials_js"
+    ],
+    "5": [
+      "src_hooks_useappstate_jsx",
+      "useappstate_appreducer",
+      "useappstate_appstateprovider"
+    ],
+    "6": [
+      "main_approot",
+      "src_main_jsx"
+    ],
+    "7": [
+      "bottomnavbar_bottomnavbar",
+      "src_components_ui_bottomnavbar_jsx"
+    ],
+    "8": [
+      "quotamodal_quotamodal",
+      "src_components_ui_quotamodal_jsx"
+    ],
+    "9": [
+      "src_components_ui_topappbar_jsx",
+      "topappbar_topappbar"
+    ],
+    "10": [
+      "phases_getphase",
+      "src_data_phases_js"
+    ],
+    "11": [
+      "homescreen_homescreen",
+      "src_pages_homescreen_jsx"
+    ],
+    "12": [
+      "komunitasscreen_komunitasscreen",
+      "src_pages_komunitasscreen_jsx"
+    ],
+    "13": [
+      "materiscreen_materiscreen",
+      "src_pages_materiscreen_jsx"
+    ],
+    "14": [
+      "onboardingscreen_onboardingscreen",
+      "src_pages_onboardingscreen_jsx"
+    ],
+    "15": [
+      "profilescreen_profilescreen",
+      "src_pages_profilescreen_jsx"
+    ],
+    "16": [
+      "sosscreen_sosscreen",
+      "src_pages_sosscreen_jsx"
+    ],
+    "17": [
+      "src_data_motivations_js"
+    ],
+    "18": [
+      "materiscreen_component"
+    ]
+  },
+  "cohesion": {
+    "0": 0.18,
+    "1": 0.33,
+    "2": 0.4,
+    "3": 0.5,
+    "4": 0.67,
+    "5": 0.67,
+    "6": 1.0,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0
+  },
+  "gods": [
+    {
+      "id": "useappstate_useappstate",
+      "label": "useAppState()",
+      "degree": 14
+    },
+    {
+      "id": "index_css_tokens",
+      "label": "CSS Tokens (shadow-card-md, rounded-[28px])",
+      "degree": 4
+    },
+    {
+      "id": "app_app",
+      "label": "App()",
+      "degree": 2
+    },
+    {
+      "id": "main_approot",
+      "label": "AppRoot()",
+      "degree": 2
+    },
+    {
+      "id": "lessons_getlessonbyday",
+      "label": "getLessonByDay()",
+      "degree": 2
+    },
+    {
+      "id": "homescreen_homescreen",
+      "label": "HomeScreen()",
+      "degree": 2
+    },
+    {
+      "id": "journalscreen_journalscreen",
+      "label": "JournalScreen()",
+      "degree": 2
+    },
+    {
+      "id": "komunitasscreen_komunitasscreen",
+      "label": "KomunitasScreen()",
+      "degree": 2
+    },
+    {
+      "id": "misiscreen_misiscreen",
+      "label": "MisiScreen()",
+      "degree": 2
+    },
+    {
+      "id": "profilescreen_profilescreen",
+      "label": "ProfileScreen()",
+      "degree": 2
+    }
+  ],
+  "surprises": [
+    {
+      "source": "AppRoot()",
+      "target": "useAppState()",
+      "source_files": [
+        "src\\main.jsx",
+        "src\\hooks\\useAppState.jsx"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `AppRoot()` unexpectedly reaches hub `useAppState()`"
+    },
+    {
+      "source": "HomeScreen()",
+      "target": "useAppState()",
+      "source_files": [
+        "src\\pages\\HomeScreen.jsx",
+        "src\\hooks\\useAppState.jsx"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `HomeScreen()` unexpectedly reaches hub `useAppState()`"
+    },
+    {
+      "source": "KomunitasScreen()",
+      "target": "useAppState()",
+      "source_files": [
+        "src\\pages\\KomunitasScreen.jsx",
+        "src\\hooks\\useAppState.jsx"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `KomunitasScreen()` unexpectedly reaches hub `useAppState()`"
+    },
+    {
+      "source": "ProfileScreen()",
+      "target": "useAppState()",
+      "source_files": [
+        "src\\pages\\ProfileScreen.jsx",
+        "src\\hooks\\useAppState.jsx"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `ProfileScreen()` unexpectedly reaches hub `useAppState()`"
+    },
+    {
+      "source": "App()",
+      "target": "useAppState()",
+      "source_files": [
+        "src\\App.jsx",
+        "src\\hooks\\useAppState.jsx"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `App()` unexpectedly reaches hub `useAppState()`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `useAppState()` connect `Community 0` to `Community 5`, `Community 6`, `Community 11`, `Community 12`, `Community 15`?",
+      "why": "High betweenness centrality (0.148) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 5 inferred relationships involving `useAppState()` (e.g. with `App()` and `AppRoot()`) actually correct?",
+      "why": "`useAppState()` has 5 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 4 inferred relationships involving `CSS Tokens (shadow-card-md, rounded-[28px])` (e.g. with `HomeScreen UI Cards (rounded-[28px])` and `MisiScreen UI Cards (rounded-[28px])`) actually correct?",
+      "why": "`CSS Tokens (shadow-card-md, rounded-[28px])` has 4 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `App Main Component`, `HomeScreen Page`, `MisiScreen Page` to the rest of the system?",
+      "why": "7 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

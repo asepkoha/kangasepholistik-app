@@ -39,7 +39,7 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
   }
 
   const phaseColors = {
-    pola_pikir: 'from-teal-600 to-teal-800',
+    pola_pikir: 'from-primary to-teal-800',
     pola_makan: 'from-amber-500 to-amber-700',
     pola_tidur: 'from-slate-700 to-slate-900'
   }
@@ -57,7 +57,7 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
         <div className="flex items-center gap-3">
           <button 
             onClick={() => setScreen('home')} 
-            className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/5 active:scale-90 transition-all"
+            className="w-11 h-11 flex items-center justify-center rounded-full hover:bg-primary/5 active:scale-90 transition-all"
             id="btn-back-home"
           >
             <span className="material-symbols-outlined text-slate-500">arrow_back</span>
@@ -66,8 +66,9 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
         </div>
         <button 
           onClick={() => setScreen('sos')}
-          className="flex items-center justify-center bg-primary-dark text-white px-4 py-1.5 rounded-full shadow-sm active:scale-95 transition-transform text-xs font-black tracking-widest"
+          className="w-11 h-11 bg-[#0A4A3C] text-white rounded-xl flex items-center justify-center text-[11px] font-black active:scale-90 transition-all shadow-sm"
           id="btn-sos-misi"
+          aria-label="Tombol SOS darurat"
         >
           SOS
         </button>
@@ -232,7 +233,7 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
         <div className="pt-10 pb-12">
           <button 
             onClick={onDone}
-            className="w-full h-20 bg-primary text-white rounded-[32px] font-black text-lg shadow-xl shadow-primary/20 hover:bg-primary-dark active:scale-[0.97] transition-all flex items-center justify-center gap-4"
+            className="w-full h-20 bg-primary text-white rounded-[28px] font-black text-lg shadow-xl shadow-primary/20 hover:bg-[#0A4A3C] active:scale-[0.97] transition-all flex items-center justify-center gap-4"
             id="btn-selesai-belajar"
           >
             <span>Alhamdulillah, Selesai Belajar</span>

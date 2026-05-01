@@ -252,7 +252,7 @@ export function AppStateProvider({ children }) {
     const data = {
       exportedAt: new Date().toISOString(),
       version: '1.0',
-      appName: 'KangAsep Holistik',
+      appName: 'Lambung Tenang',
       profile: state.profile,
       journal: state.journal,
     }
@@ -260,7 +260,7 @@ export function AppStateProvider({ children }) {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `Jurnal_KangAsep_${dateStr}.json`
+    a.download = `LambungTenang_Backup_${dateStr}.json`
     a.click()
     setTimeout(() => URL.revokeObjectURL(url), 5000)
   }, [state.profile, state.journal])

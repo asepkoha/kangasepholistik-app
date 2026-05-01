@@ -1,0 +1,27 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#0D5C4A', // Teal
+        },
+        amber: {
+          DEFAULT: '#E8A020', // Amber
+        },
+        cream: {
+          DEFAULT: '#F5F5EF', // Background
+        }
+      },
+      fontFamily: {
+        headline: ['"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"Be Vietnam Pro"', 'sans-serif'],
+      }
+    },
+  },
+  plugins: [],
+}

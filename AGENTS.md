@@ -1,11 +1,11 @@
-# KangAsepHolistik App — AGENTS.md
+# Lambung Tenang App — AGENTS.md
 
 > Gut-Brain Companion untuk penderita GERD-Anxiety. React + Vite PWA.
 > Target: Wanita Muslim Indonesia, 25-45 tahun.
 
 ## Project Overview
 
-Aplikasi pendamping pemulihan holistik GERD-Anxiety berbasis program 14 hari.
+"Lambung Tenang" (sebelumnya Kang Asep Holistik) adalah aplikasi pendamping pemulihan holistik GERD-Anxiety berbasis program 14 hari.
 Bukan sekadar tracker — ini adalah terapi digital yang menyatukan pengelolaan lambung (gut), kecemasan (brain), dan nilai Islam dalam satu pengalaman terpadu.
 
 - **Stack:** React 18 + Vite + Tailwind CSS (PWA)

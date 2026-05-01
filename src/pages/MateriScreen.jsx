@@ -37,18 +37,19 @@ export default function MateriScreen({ onBack, setScreen, initialTopicId }) {
         <div className="flex items-center gap-4">
           <button 
             onClick={onBack}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-600 active:scale-90 transition-all"
+            className="w-11 h-11 flex items-center justify-center rounded-full bg-slate-50 text-slate-600 active:scale-90 transition-all"
           >
             <span className="material-symbols-outlined">arrow_back</span>
           </button>
           <div>
             <h1 className="text-xl font-bold text-slate-900 leading-tight">Perpustakaan</h1>
-            <p className="text-[10px] font-bold text-teal-600 uppercase tracking-widest">Pustaka Pemulihan</p>
+            <p className="text-[10px] font-bold text-primary uppercase tracking-widest">Pustaka Pemulihan</p>
           </div>
         </div>
         <button 
           onClick={() => setScreen('sos')}
-          className="px-4 py-2.5 bg-amber-500 text-white rounded-xl font-bold text-xs shadow-lg shadow-amber-500/20 active:scale-95 transition-all"
+          className="w-11 h-11 bg-[#0A4A3C] text-white rounded-xl flex items-center justify-center text-[11px] font-black active:scale-90 transition-all shadow-sm"
+          aria-label="Tombol SOS darurat"
         >
           SOS
         </button>
@@ -57,11 +58,11 @@ export default function MateriScreen({ onBack, setScreen, initialTopicId }) {
       <main className="pt-24 px-6 max-w-md mx-auto space-y-6">
         {/* Search */}
         <div className="relative group">
-          <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-teal-600 transition-colors">search</span>
+          <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
           <input 
             type="text"
             placeholder="Cari materi..."
-            className="w-full bg-white border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-teal-500/5 focus:border-teal-500 transition-all shadow-sm"
+            className="w-full bg-white border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-sm font-medium focus:outline-none focus:ring-4 focus:ring-primary/50/5 focus:border-primary/50 transition-all shadow-sm"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -73,22 +74,22 @@ export default function MateriScreen({ onBack, setScreen, initialTopicId }) {
             <button
               key={materi.id}
               onClick={() => setSelectedTopic(materi)}
-              className="w-full bg-white rounded-[28px] p-5 shadow-sm border border-slate-100 flex items-center justify-between group active:scale-[0.98] transition-all hover:border-teal-100 hover:bg-teal-50/10"
+              className="w-full bg-white rounded-[28px] p-5 shadow-sm border border-slate-100 flex items-center justify-between group active:scale-[0.98] transition-all hover:border-teal-100 hover:bg-primary/5/10"
             >
               <div className="flex items-center gap-4 text-left">
-                <div className="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-all shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
                   <span className="material-symbols-outlined text-2xl">
                     {PILLAR_ICONS[materi.pillar]}
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-black text-teal-600/50 uppercase tracking-widest mb-0.5 block">
+                  <span className="text-[10px] font-black text-primary/50 uppercase tracking-widest mb-0.5 block">
                     {PILLAR_NAMES[materi.pillar]}
                   </span>
                   <h4 className="font-bold text-slate-800 leading-tight group-hover:text-teal-900 transition-colors">{materi.title}</h4>
                 </div>
               </div>
-              <span className="material-symbols-outlined text-slate-300 group-hover:translate-x-1 group-hover:text-teal-600 transition-all">chevron_right</span>
+              <span className="material-symbols-outlined text-slate-300 group-hover:translate-x-1 group-hover:text-primary transition-all">chevron_right</span>
             </button>
           ))}
           
@@ -112,13 +113,13 @@ export default function MateriScreen({ onBack, setScreen, initialTopicId }) {
             {/* Header */}
             <div className="p-6 pb-4 flex justify-between items-start">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center shadow-inner">
+                <div className="w-12 h-12 rounded-2xl bg-primary/5 text-primary flex items-center justify-center shadow-inner">
                   <span className="material-symbols-outlined">
                     {PILLAR_ICONS[selectedTopic.pillar]}
                   </span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-black text-teal-600 uppercase tracking-widest block mb-0.5">{PILLAR_NAMES[selectedTopic.pillar]}</span>
+                  <span className="text-[10px] font-black text-primary uppercase tracking-widest block mb-0.5">{PILLAR_NAMES[selectedTopic.pillar]}</span>
                   <h2 className="font-bold text-xl text-slate-900 leading-tight">{selectedTopic.title}</h2>
                 </div>
               </div>
@@ -142,7 +143,7 @@ export default function MateriScreen({ onBack, setScreen, initialTopicId }) {
                   </h3>
                   <div className={`p-6 rounded-[32px] ${
                     section.type === 'practice' 
-                      ? 'bg-gradient-to-br from-teal-50 to-teal-100/50 border border-teal-100' 
+                      ? 'bg-gradient-to-br from-primary/5 to-teal-100/50 border border-teal-100' 
                       : 'bg-slate-50/50 border border-slate-100'
                   }`}>
                     <p className={`text-base leading-relaxed ${section.type === 'practice' ? 'text-teal-900 font-medium' : 'text-slate-600'}`}>
@@ -157,7 +158,7 @@ export default function MateriScreen({ onBack, setScreen, initialTopicId }) {
             <div className="p-8 bg-white border-t border-slate-50">
               <button 
                 onClick={() => setSelectedTopic(null)}
-                className="w-full bg-teal-600 text-white py-4 rounded-2xl font-bold shadow-lg shadow-teal-600/20 active:scale-95 transition-all"
+                className="w-full bg-primary text-white py-4 rounded-2xl font-bold shadow-lg shadow-primary/20 active:scale-95 transition-all"
               >
                 Saya Mengerti, Bismillah
               </button>

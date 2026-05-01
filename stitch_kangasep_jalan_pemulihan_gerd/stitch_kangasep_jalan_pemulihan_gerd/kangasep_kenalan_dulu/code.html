@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Intake Form - KangAsep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "tertiary-container": "#248279",
+                        "surface-dim": "#dadad6",
+                        "surface-container-low": "#f4f4ef",
+                        "primary-container": "#008378",
+                        "on-background": "#1a1c19",
+                        "outline": "#6d7a77",
+                        "surface-variant": "#e2e3de",
+                        "secondary": "#855300",
+                        "background": "#fafaf5",
+                        "primary-fixed": "#89f5e7",
+                        "inverse-surface": "#2f312e",
+                        "surface-container-highest": "#e2e3de",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "outline-variant": "#bcc9c6",
+                        "on-primary-fixed-variant": "#005049",
+                        "inverse-primary": "#6bd8cb",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "primary": "#00685f",
+                        "secondary-fixed": "#ffddb8",
+                        "tertiary-fixed": "#9cf2e8",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fea619",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#684000",
+                        "tertiary-fixed-dim": "#80d5cb",
+                        "on-surface": "#1a1c19",
+                        "error-container": "#ffdad6",
+                        "surface": "#fafaf5",
+                        "on-primary-fixed": "#00201d",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fafaf5",
+                        "on-primary-container": "#f4fffc",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eeeee9",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#006a61",
+                        "inverse-on-surface": "#f1f1ec",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-tertiary-container": "#f3fffc",
+                        "tertiary": "#006860",
+                        "surface-container-high": "#e8e8e4",
+                        "on-surface-variant": "#3d4947"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "48px",
+                        "container-padding": "24px",
+                        "unit": "8px",
+                        "section-gap": "40px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "button": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h2": ["22px", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "button": ["16px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .arabesque-bg {
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 A50 50 0 0 1 100 50 A50 50 0 0 1 50 100 A50 50 0 0 1 0 50 A50 50 0 0 1 50 0" fill="none" stroke="rgba(0,104,95,0.02)" stroke-width="1"/></svg>');
+            background-size: 100px 100px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased arabesque-bg">
+<!-- Top Navigation Placeholder (Intake form implies linear flow, so we keep it minimal or hide) -->
+<header class="flex justify-center items-center w-full px-container-padding py-6 max-w-lg mx-auto">
+<!-- Kept purely semantic per intent of a linear setup flow -->
+</header>
+<main class="max-w-lg mx-auto px-container-padding pb-section-gap pt-unit flex flex-col gap-section-gap">
+<!-- Header Section -->
+<div class="flex flex-col items-center text-center gap-2">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center font-h1 mb-2 shadow-[0_4px_12px_rgba(0,104,95,0.1)]">
+                KA
+            </div>
+<h1 class="font-h2 text-h2 text-primary">Lebih kenal diri kamu</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Biar perjalanannya lebih personal.</p>
+</div>
+<!-- Welcome Mini Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-[0_4px_12px_rgba(0,104,95,0.05)] border-l-4 border-secondary-container">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-2xl">👋</span>
+<h2 class="font-h2 text-[18px] text-on-background font-bold">Kenalan dulu yuk?</h2>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant leading-[1.6]">
+                Tenang — data ini hanya ada di HP Kamu, tidak kemana-mana.
+            </p>
+</div>
+<!-- Form Section -->
+<form class="flex flex-col gap-8">
+<!-- FIELD 1: Nama -->
+<div class="flex flex-col gap-3">
+<label class="font-body-md text-[14px] text-primary font-semibold" for="nama">Nama kamu siapa? (biar bisa saling kenal)</label>
+<input class="w-full h-touch-target-min px-4 bg-surface-container-lowest border border-outline-variant rounded-xl text-on-background placeholder-on-surface-variant/60 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors ease-in-out duration-300 shadow-[0_2px_8px_rgba(0,104,95,0.02)]" id="nama" name="nama" placeholder="Tulis nama kamu di sini" type="text"/>
+</div>
+<!-- FIELD 2: Usia -->
+<div class="flex flex-col gap-3">
+<label class="font-body-md text-[14px] text-primary font-semibold">Berapa usia kamu?</label>
+<div class="flex flex-col gap-2">
+<!-- Radio Option 1 -->
+<label class="relative flex items-center justify-center w-full h-touch-target-min border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)]">
+<input class="sr-only peer" name="usia" type="radio" value="18-24"/>
+<span class="font-body-md text-on-surface-variant peer-checked:text-primary peer-checked:font-bold">18–24 tahun</span>
+<div class="absolute inset-0 rounded-xl peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5 pointer-events-none transition-all duration-300"></div>
+</label>
+<!-- Radio Option 2 -->
+<label class="relative flex items-center justify-center w-full h-touch-target-min border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)]">
+<input class="sr-only peer" name="usia" type="radio" value="25-34"/>
+<span class="font-body-md text-on-surface-variant peer-checked:text-primary peer-checked:font-bold">25–34 tahun</span>
+<div class="absolute inset-0 rounded-xl peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5 pointer-events-none transition-all duration-300"></div>
+</label>
+<!-- Radio Option 3 -->
+<label class="relative flex items-center justify-center w-full h-touch-target-min border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)]">
+<input class="sr-only peer" name="usia" type="radio" value="35-44"/>
+<span class="font-body-md text-on-surface-variant peer-checked:text-primary peer-checked:font-bold">35–44 tahun</span>
+<div class="absolute inset-0 rounded-xl peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5 pointer-events-none transition-all duration-300"></div>
+</label>
+<!-- Radio Option 4 -->
+<label class="relative flex items-center justify-center w-full h-touch-target-min border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)]">
+<input class="sr-only peer" name="usia" type="radio" value="45-54"/>
+<span class="font-body-md text-on-surface-variant peer-checked:text-primary peer-checked:font-bold">45–54 tahun</span>
+<div class="absolute inset-0 rounded-xl peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5 pointer-events-none transition-all duration-300"></div>
+</label>
+<!-- Radio Option 5 -->
+<label class="relative flex items-center justify-center w-full h-touch-target-min border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)]">
+<input class="sr-only peer" name="usia" type="radio" value="55+"/>
+<span class="font-body-md text-on-surface-variant peer-checked:text-primary peer-checked:font-bold">55+ tahun</span>
+<div class="absolute inset-0 rounded-xl peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5 pointer-events-none transition-all duration-300"></div>
+</label>
+</div>
+</div>
+<!-- FIELD 3: Main Struggle -->
+<div class="flex flex-col gap-3">
+<div class="flex flex-col gap-1">
+<label class="font-body-md text-[14px] text-primary font-semibold">Apa yang paling mengganggu hari-harimu?</label>
+<span class="font-label-caps text-label-caps text-on-surface-variant/80 normal-case">(Bisa pilih lebih dari satu)</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Checkbox 1 -->
+<label class="group flex items-center gap-4 w-full p-4 border border-outline-variant rounded-2xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)] relative overflow-hidden">
+<input class="sr-only peer" name="struggle" type="checkbox" value="takut_makan"/>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors duration-300 z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-on-primary opacity-0 peer-checked:opacity-100 transition-opacity duration-300" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-[15px] text-on-surface-variant peer-checked:text-on-background z-10">Takut makan (pusing mana makanan aman)</span>
+<div class="absolute inset-0 peer-checked:bg-primary/5 transition-colors duration-300"></div>
+<div class="absolute inset-0 rounded-2xl peer-checked:border-2 peer-checked:border-primary pointer-events-none transition-all duration-300"></div>
+</label>
+<!-- Checkbox 2 -->
+<label class="group flex items-center gap-4 w-full p-4 border border-outline-variant rounded-2xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)] relative overflow-hidden">
+<input class="sr-only peer" name="struggle" type="checkbox" value="panik_malam"/>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors duration-300 z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-on-primary opacity-0 peer-checked:opacity-100 transition-opacity duration-300" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-[15px] text-on-surface-variant peer-checked:text-on-background z-10">Panik malam hari (susah tidur)</span>
+<div class="absolute inset-0 peer-checked:bg-primary/5 transition-colors duration-300"></div>
+<div class="absolute inset-0 rounded-2xl peer-checked:border-2 peer-checked:border-primary pointer-events-none transition-all duration-300"></div>
+</label>
+<!-- Checkbox 3 -->
+<label class="group flex items-center gap-4 w-full p-4 border border-outline-variant rounded-2xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)] relative overflow-hidden">
+<input class="sr-only peer" name="struggle" type="checkbox" value="bb_turun"/>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors duration-300 z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-on-primary opacity-0 peer-checked:opacity-100 transition-opacity duration-300" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-[15px] text-on-surface-variant peer-checked:text-on-background z-10">Berat badan turun (jadi semakin cemas)</span>
+<div class="absolute inset-0 peer-checked:bg-primary/5 transition-colors duration-300"></div>
+<div class="absolute inset-0 rounded-2xl peer-checked:border-2 peer-checked:border-primary pointer-events-none transition-all duration-300"></div>
+</label>
+<!-- Checkbox 4 -->
+<label class="group flex items-center gap-4 w-full p-4 border border-outline-variant rounded-2xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)] relative overflow-hidden">
+<input class="sr-only peer" name="struggle" type="checkbox" value="mikir_berat"/>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors duration-300 z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-on-primary opacity-0 peer-checked:opacity-100 transition-opacity duration-300" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-[15px] text-on-surface-variant peer-checked:text-on-background z-10">Mikir terlalu berat (pasti kanker, tidak akan sembuh)</span>
+<div class="absolute inset-0 peer-checked:bg-primary/5 transition-colors duration-300"></div>
+<div class="absolute inset-0 rounded-2xl peer-checked:border-2 peer-checked:border-primary pointer-events-none transition-all duration-300"></div>
+</label>
+<!-- Checkbox 5 -->
+<label class="group flex items-center gap-4 w-full p-4 border border-outline-variant rounded-2xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)] relative overflow-hidden">
+<input class="sr-only peer" name="struggle" type="checkbox" value="sendirian"/>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors duration-300 z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-on-primary opacity-0 peer-checked:opacity-100 transition-opacity duration-300" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-[15px] text-on-surface-variant peer-checked:text-on-background z-10">Merasa sendirian (nggak ada yang paham)</span>
+<div class="absolute inset-0 peer-checked:bg-primary/5 transition-colors duration-300"></div>
+<div class="absolute inset-0 rounded-2xl peer-checked:border-2 peer-checked:border-primary pointer-events-none transition-all duration-300"></div>
+</label>
+<!-- Checkbox 6 -->
+<label class="group flex items-center gap-4 w-full p-4 border border-outline-variant rounded-2xl cursor-pointer hover:bg-surface-container-low transition-colors ease-in-out duration-300 bg-surface-container-lowest shadow-[0_2px_8px_rgba(0,104,95,0.02)] relative overflow-hidden">
+<input class="sr-only peer" name="struggle" type="checkbox" value="banyak_cara"/>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors duration-300 z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-on-primary opacity-0 peer-checked:opacity-100 transition-opacity duration-300" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-[15px] text-on-surface-variant peer-checked:text-on-background z-10">Sudah coba banyak cara (masih bingung)</span>
+<div class="absolute inset-0 peer-checked:bg-primary/5 transition-colors duration-300"></div>
+<div class="absolute inset-0 rounded-2xl peer-checked:border-2 peer-checked:border-primary pointer-events-none transition-all duration-300"></div>
+</label>
+</div>
+</div>
+<!-- Primary CTA -->
+<div class="pt-4">
+<button class="w-full h-[56px] bg-primary text-on-primary rounded-2xl font-button text-button shadow-[0_4px_12px_rgba(0,104,95,0.15)] hover:bg-tertiary transition-colors ease-in-out duration-300 active:scale-[0.98] flex items-center justify-center" type="button">
+                    Oke, mulai!
+                </button>
+</div>
+</form>
+</main>
+</body></html>

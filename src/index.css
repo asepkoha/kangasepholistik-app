@@ -1,10 +1,10 @@
-/* ── Kang Asep Holistik — Global Styles ── */
+/* ── Lambung Tenang — Global Styles ── */
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0D9488;
-  --color-primary-dark: #0F766E;
-  --color-secondary: #F59E0B;
+  --color-primary: #0D5C4A;
+  --color-primary-dark: #0A4A3C;
+  --color-secondary: #E8A020;
   --color-background: #FAFAF5;
   --color-surface: #FFFFFF;
   
@@ -20,9 +20,9 @@
 
 @layer base {
   :root {
-    --primary: #0D9488;
-    --primary-dark: #0F766E;
-    --secondary: #F59E0B;
+    --primary: #0D5C4A;
+    --primary-dark: #0A4A3C;
+    --secondary: #E8A020;
     --bg: #FAFAF5;
     --surface: #FFFFFF;
     
@@ -58,6 +58,10 @@
 
   .shadow-card-active {
     box-shadow: 0 12px 30px rgba(13, 148, 136, 0.08);
+  }
+
+  .shadow-card-md {
+    box-shadow: 0 8px 24px rgba(13, 148, 136, 0.10);
   }
 
   /* Custom Scrollbar (Hidden) */

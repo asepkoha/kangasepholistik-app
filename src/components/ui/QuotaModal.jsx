@@ -23,8 +23,8 @@ export default function QuotaModal({ onBackup, onClose }) {
         <div className="absolute top-4 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-slate-200 rounded-full sm:hidden" />
 
         {/* Icon */}
-        <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center mx-auto mb-6 shadow-inner">
-          <span className="material-symbols-outlined text-4xl text-teal-600">
+        <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-6 shadow-inner">
+          <span className="material-symbols-outlined text-4xl text-primary">
             folder_open
           </span>
         </div>
@@ -47,7 +47,7 @@ export default function QuotaModal({ onBackup, onClose }) {
         {/* CTA */}
         <button
           onClick={onBackup}
-          className="w-full py-4 bg-teal-600 text-white rounded-[20px] font-bold text-base shadow-lg shadow-teal-600/20 active:scale-95 transition-all mb-3"
+          className="w-full py-4 bg-primary text-white rounded-[20px] font-bold text-base shadow-lg shadow-primary/20 active:scale-95 transition-all mb-3"
           id="btn-quota-backup"
         >
           <span className="flex items-center justify-center gap-2">

@@ -10,7 +10,7 @@ export default function TopAppBar({ name, streak, xp }) {
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-primary/10 overflow-hidden flex items-center justify-center p-0.5">
             <img
-              src="/logo-ka.png"
+              src="/logo-ka.webp"
               alt="KA"
               className="w-full h-full object-cover"
               onError={(e) => {

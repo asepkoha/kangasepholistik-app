@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perpustakaan Materi - KangAsep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2f312e",
+                        "inverse-on-surface": "#f1f1ec",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "on-primary-container": "#f4fffc",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "outline-variant": "#bcc9c6",
+                        "surface-container-low": "#f4f4ef",
+                        "surface": "#fafaf5",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#80d5cb",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e2e3de",
+                        "surface-dim": "#dadad6",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface-container-high": "#e8e8e4",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#008378",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed": "#00201d",
+                        "primary": "#00685f",
+                        "tertiary": "#006860",
+                        "surface-container-highest": "#e2e3de",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#005049",
+                        "on-secondary-container": "#684000",
+                        "on-error-container": "#93000a",
+                        "background": "#fafaf5",
+                        "tertiary-container": "#248279",
+                        "on-background": "#1a1c19",
+                        "on-surface": "#1a1c19",
+                        "on-primary-fixed": "#00201d",
+                        "secondary-container": "#fea619",
+                        "secondary-fixed": "#ffddb8",
+                        "primary-fixed": "#89f5e7",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fafaf5",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#9cf2e8",
+                        "secondary": "#855300",
+                        "on-surface-variant": "#3d4947",
+                        "inverse-primary": "#6bd8cb",
+                        "outline": "#6d7a77",
+                        "surface-tint": "#006a61",
+                        "surface-container": "#eeeee9",
+                        "on-tertiary-container": "#f3fffc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "8px",
+                        "touch-target-min": "48px",
+                        "container-padding": "24px",
+                        "section-gap": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "button": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h2": ["22px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h1": ["28px", {"lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-32">
+<!-- TopAppBar -->
+<header class="bg-stone-50 dark:bg-slate-950 text-teal-600 dark:text-teal-400 font-['Plus_Jakarta_Sans'] text-lg font-semibold tracking-tight docked full-width top-0 border-none shadow-[0_4px_20px_-4px_rgba(13,148,136,0.08)] flex items-center justify-between px-6 py-4 w-full sticky z-40 transition-all ease-in-out duration-300">
+<div class="flex items-center gap-3">
+<img alt="Elder sibling guide avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="Soft, empathetic illustrated avatar of an elder sibling character with warm earth tones, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNvR7ykkfDOmWrkQeq7E19SnWOqnGg-DDnSGayibY9HN6vEKXjcxwURz0fkTOOccKHgCUdhpw3dZa_SasYyWZBKP2ZVp7TSo91k-tJkzYE6DrhI1PbiBP-4miH6Di3WxETrEjDRKUbD0hKTD6izw-IqGm-fD69XCsNhETMExW8x4Q-eYjlQaFsBno0LDqjFOsglZpmy_MCINDaHYx_bbOxl7LYBytZZwac66GIzqGh0mbzj0MEMnz7eQt9Cy7qbrEEydF3tdzB-DQM"/>
+<div>
+<h1 class="font-h2 text-h2 text-on-surface">Perpustakaan Materi</h1>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-0.5 font-normal">Baca kapan saja, urutan bebas.</p>
+</div>
+</div>
+<button class="hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-colors ease-in-out duration-300 scale-100 active:scale-95 w-touch-target-min h-touch-target-min flex items-center justify-center rounded-full text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="px-container-padding py-6 max-w-2xl mx-auto space-y-8">
+<!-- Search Bar -->
+<div class="relative w-full shadow-sm rounded-full bg-surface-container-lowest">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-full border border-outline-variant bg-transparent text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md placeholder:text-outline" placeholder="Cari topik..." type="text"/>
+</div>
+<!-- Phase Tabs -->
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-2 -mx-container-padding px-container-padding snap-x">
+<button class="snap-start flex-none px-5 py-2 rounded-full bg-primary text-on-primary font-button text-button shadow-[0_4px_12px_rgba(0,104,95,0.15)] whitespace-nowrap transition-all active:scale-95">Semua</button>
+<button class="snap-start flex-none px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-button text-button hover:bg-surface-variant transition-all active:scale-95 whitespace-nowrap">Pola Pikir</button>
+<button class="snap-start flex-none px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-button text-button hover:bg-surface-variant transition-all active:scale-95 whitespace-nowrap">Pola Makan</button>
+<button class="snap-start flex-none px-5 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-button text-button hover:bg-surface-variant transition-all active:scale-95 whitespace-nowrap">Pola Tidur</button>
+</div>
+<!-- SECTION 1 -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-xl">🧠</span>
+<h2 class="font-h2 text-h2 text-on-surface">Fase 1: Pola Pikir (Hari 1-4)</h2>
+</div>
+<!-- Card 1 (Completed) -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,104,95,0.05)] border border-primary-fixed-dim/30 relative overflow-hidden active:scale-[0.98] transition-transform">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
+<div class="flex-none flex flex-col items-center justify-center w-12 h-12 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps">
+<span>H-1</span>
+</div>
+<div class="flex-grow flex flex-col justify-center min-w-0">
+<p class="font-label-caps text-label-caps text-primary mb-1 uppercase tracking-wider">Bismillah, Mari Kita Mulai</p>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold truncate leading-tight">Saraf Vagus &amp; Gut-Brain Connection</h3>
+<div class="flex items-center gap-1 mt-1.5 text-on-surface-variant opacity-80">
+<span class="material-symbols-outlined text-[16px]" data-icon="menu_book">menu_book</span>
+<span class="font-body-md text-[13px]">5 mnt</span>
+</div>
+</div>
+<div class="flex-none flex items-center justify-center w-8 text-primary">
+<span class="material-symbols-outlined rounded-full bg-primary-container/20 p-1" data-icon="check" data-weight="fill">check</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,104,95,0.05)] relative overflow-hidden active:scale-[0.98] transition-transform">
+<div class="flex-none flex flex-col items-center justify-center w-12 h-12 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps">
+<span>H-2</span>
+</div>
+<div class="flex-grow flex flex-col justify-center min-w-0">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-wider">Teknik Napas 4-4-6</p>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold truncate leading-tight">Cara tercepat menenangkan sistem saraf</h3>
+<div class="flex items-center gap-1 mt-1.5 text-on-surface-variant opacity-80">
+<span class="material-symbols-outlined text-[16px]" data-icon="menu_book">menu_book</span>
+<span class="font-body-md text-[13px]">4 mnt</span>
+</div>
+</div>
+<div class="flex-none flex items-center justify-center w-8 text-outline">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,104,95,0.05)] relative overflow-hidden active:scale-[0.98] transition-transform">
+<div class="flex-none flex flex-col items-center justify-center w-12 h-12 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps">
+<span>H-3</span>
+</div>
+<div class="flex-grow flex flex-col justify-center min-w-0">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-wider">Mindful Eating — Makan dengan Sadar</p>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold truncate leading-tight">Cara makan sama pentingnya dengan apa yang dimakan</h3>
+<div class="flex items-center gap-1 mt-1.5 text-on-surface-variant opacity-80">
+<span class="material-symbols-outlined text-[16px]" data-icon="menu_book">menu_book</span>
+<span class="font-body-md text-[13px]">6 mnt</span>
+</div>
+</div>
+<div class="flex-none flex items-center justify-center w-8 text-outline">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,104,95,0.05)] relative overflow-hidden active:scale-[0.98] transition-transform">
+<div class="flex-none flex flex-col items-center justify-center w-12 h-12 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps">
+<span>H-4</span>
+</div>
+<div class="flex-grow flex flex-col justify-center min-w-0">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-wider">Journaling sebagai Terapi</p>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold truncate leading-tight">Menulis sebagai cara melepas beban kecemasan</h3>
+<div class="flex items-center gap-1 mt-1.5 text-on-surface-variant opacity-80">
+<span class="material-symbols-outlined text-[16px]" data-icon="menu_book">menu_book</span>
+<span class="font-body-md text-[13px]">5 mnt</span>
+</div>
+</div>
+<div class="flex-none flex items-center justify-center w-8 text-outline">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- SECTION 2 -->
+<section class="space-y-4 pt-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-xl">🍽️</span>
+<h2 class="font-h2 text-h2 text-on-surface">Fase 2: Pola Makan (Hari 5-10)</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Mini Card 5 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,104,95,0.05)] relative overflow-hidden active:scale-[0.98] transition-transform items-center">
+<div class="flex-none flex flex-col items-center justify-center w-10 h-10 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps">H-5</div>
+<h3 class="font-body-md text-body-md text-on-surface font-medium flex-grow">Aturan Sepertiga — Sunnah + Sains</h3>
+<span class="material-symbols-outlined text-outline flex-none" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Mini Card 6 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,104,95,0.05)] relative overflow-hidden active:scale-[0.98] transition-transform items-center">
+<div class="flex-none flex flex-col items-center justify-center w-10 h-10 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps">H-6</div>
+<h3 class="font-body-md text-body-md text-on-surface font-medium flex-grow">Food Triggers &amp; Protokol 5C</h3>
+<span class="material-symbols-outlined text-outline flex-none" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Mini Card 7 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,104,95,0.05)] relative overflow-hidden active:scale-[0.98] transition-transform items-center">
+<div class="flex-none flex flex-col items-center justify-center w-10 h-10 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps">H-7</div>
+<h3 class="font-body-md text-body-md text-on-surface font-medium flex-grow">Sains di Balik Walmagh</h3>
+<span class="material-symbols-outlined text-outline flex-none" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Mini Card 8 -->
+<div class="bg-surface-container-lowest rounded-[24px] p-4 flex gap-4 shadow-[0_4px_12px_rgba(0,104,95,0.05)] relative overflow-hidden active:scale-[0.98] transition-transform items-center">
+<div class="flex-none flex flex-col items-center justify-center w-10 h-10 rounded-xl bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps">H-8</div>
+<h3 class="font-body-md text-body-md text-on-surface font-medium flex-grow">Emergency Protocol — Saat Panik Menyerang</h3>
+<span class="material-symbols-outlined text-outline flex-none" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Progress Bar -->
+<div class="fixed bottom-[88px] left-0 w-full px-container-padding z-40 md:max-w-2xl md:left-1/2 md:-translate-x-1/2">
+<div class="bg-surface-container-lowest rounded-[24px] p-4 shadow-[0_-8px_24px_rgba(0,104,95,0.08)] border border-surface-variant flex items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-primary font-button text-[14px]">
+<span class="text-lg">📚</span>
+<span>1 dari 14 materi sudah dibaca</span>
+</div>
+<div class="flex-grow max-w-[120px] h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 7%"></div>
+</div>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-teal-600 dark:text-teal-400 font-['Plus_Jakarta_Sans'] text-[12px] font-medium hidden fixed bottom-0 w-full rounded-t-[24px] border-t border-teal-50 dark:border-slate-800 shadow-[0_-4px_16px_rgba(13,148,136,0.06)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 md:hidden !flex">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-teal-500 transition-all ease-in-out duration-300 active:scale-90 w-touch-target-min" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="home">home</span>
+<span>Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 rounded-2xl px-4 py-1 hover:text-teal-500 transition-all ease-in-out duration-300 active:scale-90 w-touch-target-min" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="menu_book" data-weight="fill">menu_book</span>
+<span>Materi</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-teal-500 transition-all ease-in-out duration-300 active:scale-90 w-touch-target-min" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="groups">groups</span>
+<span>Komunitas</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-teal-500 transition-all ease-in-out duration-300 active:scale-90 w-touch-target-min" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-icon="person">person</span>
+<span>Profil</span>
+</a>
+</nav>
+</body></html>

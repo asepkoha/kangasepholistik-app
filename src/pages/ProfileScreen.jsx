@@ -1,4 +1,5 @@
 import { useAppState } from '../hooks/useAppState'
+import BottomNavBar from '../components/ui/BottomNavBar'
 
 export default function ProfileScreen({ setScreen }) {
   const { profile, totalXP, backup, resetAll, setScreen: navTo } = useAppState()
@@ -24,14 +25,15 @@ export default function ProfileScreen({ setScreen }) {
             </button>
             <div>
               <h1 className="text-lg font-bold text-slate-900 leading-tight">Profil Saya</h1>
-              <p className="text-[10px] font-bold text-teal-600 uppercase tracking-widest">Pengaturan & Data</p>
+              <p className="text-[10px] font-bold text-primary uppercase tracking-widest">Pengaturan & Data</p>
             </div>
           </div>
           <button
             onClick={() => navigate('sos')}
-            className="flex items-center justify-center bg-teal-700 text-white w-10 h-10 rounded-full shadow-sm active:scale-95 transition-transform"
+            className="w-11 h-11 bg-[#0A4A3C] text-white rounded-xl flex items-center justify-center text-[11px] font-black active:scale-90 transition-all shadow-sm"
+            aria-label="Tombol SOS darurat"
           >
-            <span className="text-sm font-bold">SOS</span>
+            SOS
           </button>
         </div>
       </header>
@@ -67,11 +69,11 @@ export default function ProfileScreen({ setScreen }) {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-white rounded-3xl p-6 shadow-soft-ambient flex flex-col items-center text-center border border-slate-50">
+          <div className="bg-white rounded-[28px] p-6 shadow-soft-ambient flex flex-col items-center text-center border border-slate-100">
             <span className="text-3xl font-bold text-primary mb-1">{totalXP}</span>
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total XP</span>
           </div>
-          <div className="bg-white rounded-3xl p-6 shadow-soft-ambient flex flex-col items-center text-center border border-slate-50">
+          <div className="bg-white rounded-[28px] p-6 shadow-soft-ambient flex flex-col items-center text-center border border-slate-100">
             <span className="text-3xl font-bold text-primary mb-1">{profile.age || '-'}</span>
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Usia</span>
           </div>
@@ -85,11 +87,11 @@ export default function ProfileScreen({ setScreen }) {
             {/* Backup — primary action */}
             <button
               onClick={backup}
-              className="w-full flex items-center justify-between p-4 rounded-2xl hover:bg-teal-50 transition-colors group"
+              className="w-full flex items-center justify-between p-4 rounded-2xl hover:bg-primary/5 transition-colors group"
               id="btn-backup-jurnal"
             >
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center group-hover:bg-teal-100 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                   <span className="material-symbols-outlined">shield_lock</span>
                 </div>
                 <div className="text-left">
@@ -128,31 +130,7 @@ export default function ProfileScreen({ setScreen }) {
         </p>
       </main>
 
-      {/* Bottom Nav Bar */}
-      <nav className="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 h-24 bg-white/90 backdrop-blur-md rounded-t-[32px] border-t border-primary/5 shadow-[0_-8px_30px_rgba(13,148,136,0.08)]">
-        <button
-          onClick={() => navigate('home')}
-          className="flex flex-col items-center justify-center text-slate-400 px-6 py-2 active:scale-95 transition-all"
-        >
-          <span className="material-symbols-outlined mb-1">home</span>
-          <span className="text-[12px] font-medium">Beranda</span>
-        </button>
-
-        <button
-          onClick={() => navigate('materi')}
-          className="flex flex-col items-center justify-center text-slate-400 px-6 py-2 active:scale-95 transition-all"
-        >
-          <span className="material-symbols-outlined mb-1">library_books</span>
-          <span className="text-[12px] font-medium">Materi</span>
-        </button>
-
-        <button
-          className="flex flex-col items-center justify-center bg-primary/10 text-primary rounded-[24px] px-6 py-2 active:scale-95 transition-all"
-        >
-          <span className="material-symbols-outlined mb-1" style={{ fontVariationSettings: "'FILL' 1" }}>person</span>
-          <span className="text-[12px] font-medium">Profil</span>
-        </button>
-      </nav>
+      <BottomNavBar activeScreen="profil" onNavigate={navigate} />
     </div>
   )
 }

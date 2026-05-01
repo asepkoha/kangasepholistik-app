@@ -23,7 +23,7 @@ export default function OnboardingScreen({ onSave }) {
         {[1, 2, 3, 4].map(s => (
           <div 
             key={s} 
-            className={`flex-1 h-full transition-all duration-500 ${step >= s ? 'bg-teal-600' : 'bg-transparent'}`}
+            className={`flex-1 h-full transition-all duration-500 ${step >= s ? 'bg-primary' : 'bg-transparent'}`}
           />
         ))}
       </div>
@@ -34,28 +34,28 @@ export default function OnboardingScreen({ onSave }) {
           <div className="flex-1 flex flex-col animate-in slide-in-from-bottom-4 duration-500">
             <div className="mb-8">
               <div className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mb-6">
-                <span className="material-symbols-outlined text-teal-600 text-3xl">favorite</span>
+                <span className="material-symbols-outlined text-primary text-3xl">favorite</span>
               </div>
-              <h1 className="text-3xl font-bold text-slate-900 leading-tight mb-4">
-                Bismillah, <br/>Kamu Berani Sekali.
+              <h1 className="text-3xl font-black text-primary leading-tight mb-4 tracking-tighter">
+                Lambung Tenang
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Aku tahu rasanya. Dada sesak, perut perih, dan pikiran yang "lari" ke mana-mana. Itu berat, tapi hari ini kamu memilih untuk mulai.
+                Selamat datang di <span className="font-bold text-primary">Lambung Tenang</span>. Kakak akan didampingi oleh <span className="font-semibold text-slate-700">Kang Asep</span> dalam perjalanan pemulihan 14 hari ini.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 mb-8">
               <p className="text-sm text-slate-500 italic">
-                "Lambungmu bukan musuhmu. Ia hanya sedang 'lelah' dan butuh waktu untuk renovasi."
+                "Ikhtiar ini adalah janji pada diri sendiri untuk tidak menyerah. Kamu berhak merasa aman dan tenang kembali."
               </p>
             </div>
 
             <div className="mt-auto pt-8">
               <button 
                 onClick={nextStep}
-                className="w-full py-4 bg-teal-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-teal-600/20 active:scale-95 transition-all"
+                className="w-full py-4 bg-primary text-white rounded-2xl font-bold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-all"
               >
-                Lanjut, Kang
+                Bismillah, Mulai
               </button>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function OnboardingScreen({ onSave }) {
                   { icon: 'bedtime', title: 'Pola Tidur', desc: 'Waktu repair sel paling optimal.' }
                 ].map(item => (
                   <div key={item.title} className="flex gap-4 p-4 bg-white rounded-2xl border border-slate-50">
-                    <span className="material-symbols-outlined text-teal-600">{item.icon}</span>
+                    <span className="material-symbols-outlined text-primary">{item.icon}</span>
                     <div>
                       <h4 className="font-bold text-slate-800 text-sm">{item.title}</h4>
                       <p className="text-xs text-slate-500">{item.desc}</p>
@@ -95,9 +95,9 @@ export default function OnboardingScreen({ onSave }) {
               <button onClick={prevStep} className="px-6 py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold">Kembali</button>
               <button 
                 onClick={nextStep}
-                className="flex-1 py-4 bg-teal-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-teal-600/20 active:scale-95 transition-all"
+                className="flex-1 py-4 bg-primary text-white rounded-2xl font-bold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-all"
               >
-                Paham, Kang
+                Saya Paham
               </button>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function OnboardingScreen({ onSave }) {
                     placeholder="Contoh: Rina"
                     value={form.name}
                     onChange={e => updateForm('name', e.target.value)}
-                    className="w-full bg-white border border-slate-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500/20 outline-none transition-all"
+                    className="w-full bg-white border border-slate-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary/50/20 outline-none transition-all"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -132,7 +132,7 @@ export default function OnboardingScreen({ onSave }) {
                       placeholder="Thn"
                       value={form.age}
                       onChange={e => updateForm('age', e.target.value)}
-                      className="w-full bg-white border border-slate-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500/20 outline-none transition-all"
+                      className="w-full bg-white border border-slate-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary/50/20 outline-none transition-all"
                     />
                   </div>
                   <div className="space-y-2">
@@ -142,7 +142,7 @@ export default function OnboardingScreen({ onSave }) {
                       placeholder="Domisili"
                       value={form.city}
                       onChange={e => updateForm('city', e.target.value)}
-                      className="w-full bg-white border border-slate-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500/20 outline-none transition-all"
+                      className="w-full bg-white border border-slate-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary/50/20 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -154,7 +154,7 @@ export default function OnboardingScreen({ onSave }) {
               <button 
                 disabled={!form.name || !form.age}
                 onClick={nextStep}
-                className="flex-1 py-4 bg-teal-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-teal-600/20 active:scale-95 transition-all disabled:opacity-50"
+                className="flex-1 py-4 bg-primary text-white rounded-2xl font-bold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-all disabled:opacity-50"
               >
                 Selesai
               </button>
@@ -173,11 +173,11 @@ export default function OnboardingScreen({ onSave }) {
                 <button 
                   onClick={() => updateForm('committed', !form.committed)}
                   className={`w-full p-5 rounded-2xl border-2 transition-all text-left flex gap-4 ${
-                    form.committed ? 'bg-teal-50 border-teal-600' : 'bg-white border-slate-100'
+                    form.committed ? 'bg-primary/5 border-primary' : 'bg-white border-slate-100'
                   }`}
                 >
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center mt-0.5 border ${
-                    form.committed ? 'bg-teal-600 border-teal-600 text-white' : 'bg-white border-slate-300 text-transparent'
+                    form.committed ? 'bg-primary border-primary text-white' : 'bg-white border-slate-300 text-transparent'
                   }`}>
                     <span className="material-symbols-outlined text-xs">done</span>
                   </div>
@@ -213,7 +213,7 @@ export default function OnboardingScreen({ onSave }) {
               <button 
                 disabled={!form.committed || !disclaimerAccepted}
                 onClick={() => onSave(form)}
-                className="flex-1 py-4 bg-teal-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-teal-600/20 active:scale-95 transition-all disabled:opacity-50"
+                className="flex-1 py-4 bg-primary text-white rounded-2xl font-bold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-all disabled:opacity-50"
               >
                 Mulai Ikhtiar
               </button>

@@ -18,7 +18,7 @@ export default function BottomNavBar({ activeScreen, onNavigate }) {
   })()
 
   return (
-    <nav className="fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur-xl rounded-t-[32px] shadow-[0_-8px_32px_rgba(13,148,136,0.08)] border-t border-teal-50/50 pb-safe-offset-4">
+    <nav className="fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur-xl rounded-t-[32px] shadow-[0_-8px_32px_rgba(13,148,136,0.08)] border-t border-primary/5/50 pb-safe-offset-4">
       <div className="max-w-md mx-auto flex justify-around items-center px-4 h-20">
         {NAV_ITEMS.map((item) => {
           const isActive = item.id === activeId;

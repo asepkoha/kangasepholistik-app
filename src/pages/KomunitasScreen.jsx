@@ -41,7 +41,7 @@ export default function KomunitasScreen({ onBack, setScreen }) {
         </button>
         <div>
           <h1 className="text-xl font-bold text-slate-900 leading-tight">Komunitas Harapan</h1>
-          <p className="text-[10px] font-bold text-teal-600 uppercase tracking-widest">Saling Menguatkan</p>
+          <p className="text-[10px] font-bold text-primary uppercase tracking-widest">Saling Menguatkan</p>
         </div>
       </header>
 
@@ -65,7 +65,7 @@ export default function KomunitasScreen({ onBack, setScreen }) {
               onClick={() => setFilter(f)}
               className={`px-4 py-2.5 rounded-full whitespace-nowrap text-xs font-bold transition-all ${
                 filter === f 
-                  ? 'bg-teal-600 text-white shadow-md shadow-teal-600/20' 
+                  ? 'bg-primary text-white shadow-md shadow-primary/20' 
                   : 'bg-white text-slate-500 border border-slate-100'
               }`}
             >
@@ -81,7 +81,7 @@ export default function KomunitasScreen({ onBack, setScreen }) {
               <div key={post.id} className="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 animate-in slide-in-from-bottom-2 duration-300">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-2xl flex items-center justify-center font-bold text-white shadow-sm ${post.isMentor ? 'bg-amber-500' : 'bg-teal-600'}`}>
+                    <div className={`w-10 h-10 rounded-2xl flex items-center justify-center font-bold text-white shadow-sm ${post.isMentor ? 'bg-amber-500' : 'bg-primary'}`}>
                       {post.author[0]}
                     </div>
                     <div>
@@ -104,7 +104,7 @@ export default function KomunitasScreen({ onBack, setScreen }) {
                 <div className="flex items-center gap-4 pt-4 border-t border-slate-50">
                   <button 
                     onClick={() => likeCommunityPost(post.id)}
-                    className="flex items-center gap-1.5 text-slate-400 hover:text-teal-600 active:scale-90 transition-all"
+                    className="flex items-center gap-1.5 text-slate-400 hover:text-primary active:scale-90 transition-all"
                   >
                     <span className="material-symbols-outlined text-xl">favorite</span>
                     <span className="text-xs font-bold">{post.likes}</span>
@@ -144,7 +144,7 @@ export default function KomunitasScreen({ onBack, setScreen }) {
                   onClick={() => setSelectedTag(tag)}
                   className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all border ${
                     selectedTag === tag 
-                      ? 'bg-teal-600 border-teal-600 text-white shadow-md shadow-teal-600/20' 
+                      ? 'bg-primary border-primary text-white shadow-md shadow-primary/20' 
                       : 'bg-slate-50 border-slate-100 text-slate-500'
                   }`}
                 >
@@ -156,7 +156,7 @@ export default function KomunitasScreen({ onBack, setScreen }) {
             <textarea 
               autoFocus
               placeholder="Ceritakan progresmu hari ini..."
-              className="w-full h-32 bg-slate-50 border border-slate-100 rounded-2xl p-5 text-sm text-slate-700 outline-none focus:ring-2 focus:ring-teal-500/20 transition-all mb-6 resize-none"
+              className="w-full h-32 bg-slate-50 border border-slate-100 rounded-2xl p-5 text-sm text-slate-700 outline-none focus:ring-2 focus:ring-primary/50/20 transition-all mb-6 resize-none"
               value={newPostContent}
               onChange={e => setNewPostContent(e.target.value)}
             />
@@ -164,7 +164,7 @@ export default function KomunitasScreen({ onBack, setScreen }) {
             <button 
               onClick={handleSubmit}
               disabled={!newPostContent.trim()}
-              className="w-full py-4 bg-teal-600 text-white rounded-2xl font-bold shadow-lg shadow-teal-600/20 active:scale-95 transition-all disabled:opacity-50"
+              className="w-full py-4 bg-primary text-white rounded-2xl font-bold shadow-lg shadow-primary/20 active:scale-95 transition-all disabled:opacity-50"
             >
               Kirim Cerita
             </button>

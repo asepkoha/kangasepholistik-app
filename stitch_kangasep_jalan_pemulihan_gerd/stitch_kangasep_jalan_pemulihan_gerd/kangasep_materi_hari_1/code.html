@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Materi - KangAsep</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#bcc9c6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#00685f",
+                        "surface": "#fafaf5",
+                        "secondary-container": "#fea619",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "secondary-fixed": "#ffddb8",
+                        "tertiary-fixed-dim": "#80d5cb",
+                        "inverse-surface": "#2f312e",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#6bd8cb",
+                        "surface-bright": "#fafaf5",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "tertiary-fixed": "#9cf2e8",
+                        "on-surface-variant": "#3d4947",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#89f5e7",
+                        "on-background": "#1a1c19",
+                        "surface-variant": "#e2e3de",
+                        "surface-tint": "#006a61",
+                        "on-secondary-fixed": "#2a1700",
+                        "background": "#fafaf5",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e3de",
+                        "secondary": "#855300",
+                        "surface-container-low": "#f4f4ef",
+                        "on-surface": "#1a1c19",
+                        "outline": "#6d7a77",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "primary-container": "#008378",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-dim": "#dadad6",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary": "#006860",
+                        "tertiary-container": "#248279",
+                        "on-secondary-container": "#684000",
+                        "on-primary-fixed-variant": "#005049",
+                        "on-primary-container": "#f4fffc",
+                        "surface-container-high": "#e8e8e4",
+                        "surface-container": "#eeeee9",
+                        "on-tertiary-container": "#f3fffc",
+                        "inverse-on-surface": "#f1f1ec",
+                        "on-primary-fixed": "#00201d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "40px",
+                        "gutter": "16px",
+                        "container-padding": "24px",
+                        "touch-target-min": "48px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "button": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h2": ["22px", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "button": ["16px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); }
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface antialiased bg-background pb-[100px]">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-40 bg-[#FAFAF5] dark:bg-stone-950 border-b border-stone-200/50 dark:border-stone-800 shadow-sm shadow-teal-900/5 transition-colors duration-300 ease-in-out flex items-center justify-between px-6 py-4 w-full">
+<button aria-label="Kembali" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">
+<span class="material-symbols-outlined text-[#0D9488] dark:text-teal-400" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex-1 flex justify-center">
+<span class="px-4 py-2 bg-primary-fixed text-primary-container font-label-caps rounded-full whitespace-nowrap">
+                🧠 Pola Pikir · Hari 1
+            </span>
+</div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<main class="max-w-3xl mx-auto px-container-padding py-section-gap flex flex-col gap-unit-6 space-y-6">
+<!-- Hero Card -->
+<section class="rounded-3xl p-6 bg-gradient-to-br from-primary to-surface-tint text-on-primary shadow-lg shadow-primary/20 relative overflow-hidden">
+<!-- Decorative Arabesque / Watermark (simulated with SVG pattern) -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M54.627 0l.83.83-54.627 54.627-.83-.83L54.627 0zM29.627 0l.83.83-29.627 29.627-.83-.83L29.627 0zM60 29.627l-29.627 29.627-.83-.83L59.17 28.797 60 29.627z\' fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
+<div class="relative z-10 flex flex-col h-full justify-between gap-4">
+<span class="font-label-caps text-on-primary/80 uppercase tracking-widest">MATERI HARI 1</span>
+<div>
+<h1 class="font-h1 text-on-primary mb-2">Bismillah, Mari Kita Mulai</h1>
+<p class="font-body-md text-on-primary/85 leading-relaxed">
+                        Tubuh dan pikiran kita saling terhubung erat. Ketika perut terasa tidak nyaman, wajar jika rasa cemas muncul. Hari ini kita mulai belajar mengenali sinyal-sinyal itu tanpa menghakiminya.
+                    </p>
+</div>
+<div class="flex justify-end mt-4">
+<span class="inline-flex items-center gap-1 font-label-caps text-on-primary/90 bg-on-primary/10 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                        📖 5 menit
+                    </span>
+</div>
+</div>
+</section>
+<!-- Voice Note Card -->
+<section class="bg-surface-container-lowest rounded-3xl p-6 shadow-sm border border-surface-container-highest">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined fill" data-icon="mic" data-weight="fill">mic</span>
+</div>
+<h2 class="font-h2 text-on-surface">Pesan Suara Kang Asep</h2>
+</div>
+<div class="bg-primary-fixed/20 border-l-[3px] border-primary-container rounded-r-xl p-4 italic font-body-md text-on-surface-variant">
+                "Halo Kak, pesanku untuk hari ini sedang dalam perjalanan ke kamu. Sambil menunggu, baca ringkasan di bawah pelan-pelan ya. Tidak terburu-buru. 🌿"
+            </div>
+</section>
+<!-- Poin Utama Card -->
+<section class="bg-surface-container-lowest rounded-3xl p-6 shadow-sm border border-surface-container-highest">
+<div class="flex items-center gap-3 mb-5">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined fill" data-icon="lightbulb" data-weight="fill">lightbulb</span>
+</div>
+<h2 class="font-h2 text-on-surface">Poin Utama Hari Ini</h2>
+</div>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container mt-0.5 fill" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span>Kecemasan dan GERD terhubung lewat Saraf Vagus</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container mt-0.5 fill" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span>Lambungmu punya otak sendiri</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container mt-0.5 fill" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span>Langkah hari ini: perhatikan napasmu</span>
+</li>
+</ul>
+</section>
+<!-- Preview Besok Card -->
+<section class="bg-primary-fixed/30 rounded-3xl p-6 border border-primary-fixed/50">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</div>
+<h3 class="font-button text-primary-container">Preview Besok — Hari 2</h3>
+</div>
+<p class="font-body-md text-on-surface-variant ml-13">
+                Besok kita pelajari teknik Napas 4-4-6 — cara paling cepat menenangkan sistem saraf.
+            </p>
+</section>
+<!-- Action Button -->
+<div class="pt-4 pb-8">
+<button class="w-full h-[52px] bg-primary hover:bg-primary-container text-on-primary font-button rounded-2xl shadow-md transition-all duration-300 ease-in-out flex items-center justify-center gap-2">
+                Selesai Baca ✅
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-white dark:bg-stone-900 rounded-t-3xl border-t border-stone-100 dark:border-stone-800 shadow-[0_-4px_12px_rgba(13,148,136,0.05)] md:hidden">
+<!-- Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-teal-600 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-medium">Home</span>
+</a>
+<!-- Misi (Inactive) -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-teal-600 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="task_alt">task_alt</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-medium">Misi</span>
+</a>
+<!-- Materi (Active) -->
+<a class="flex flex-col items-center justify-center text-[#0D9488] dark:text-teal-400 bg-teal-50/50 dark:bg-teal-900/20 rounded-2xl px-4 py-1 transition-all duration-300 ease-in-out scale-active-95" href="#">
+<span class="material-symbols-outlined mb-1 fill" data-icon="auto_stories" data-weight="fill">auto_stories</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-medium">Materi</span>
+</a>
+<!-- Profil (Inactive) -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-teal-600 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-medium">Profil</span>
+</a>
+</nav>
+</body></html>

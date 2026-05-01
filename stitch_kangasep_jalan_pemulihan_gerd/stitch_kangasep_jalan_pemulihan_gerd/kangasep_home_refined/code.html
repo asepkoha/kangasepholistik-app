@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KangAsep - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAFAF5; /* Strict brand background */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for horizontal lists if needed */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f4f4ef",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f1ec",
+                        "on-tertiary-fixed": "#00201d",
+                        "outline-variant": "#bcc9c6",
+                        "surface-container-highest": "#e2e3de",
+                        "secondary-container": "#fea619",
+                        "primary-container": "#008378",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#00685f",
+                        "primary-fixed": "#89f5e7",
+                        "background": "#fafaf5",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "tertiary-fixed-dim": "#80d5cb",
+                        "on-tertiary-container": "#f3fffc",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "surface-variant": "#e2e3de",
+                        "inverse-primary": "#6bd8cb",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dadad6",
+                        "on-secondary-container": "#684000",
+                        "tertiary-fixed": "#9cf2e8",
+                        "on-surface-variant": "#3d4947",
+                        "on-primary-fixed": "#00201d",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "outline": "#6d7a77",
+                        "inverse-surface": "#2f312e",
+                        "surface-container-high": "#e8e8e4",
+                        "surface-container": "#eeeee9",
+                        "surface": "#fafaf5",
+                        "surface-bright": "#fafaf5",
+                        "tertiary": "#006860",
+                        "on-surface": "#1a1c19",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#005049",
+                        "on-background": "#1a1c19",
+                        "tertiary-container": "#248279",
+                        "secondary": "#855300",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#006a61",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "secondary-fixed": "#ffddb8",
+                        "on-primary-container": "#f4fffc",
+                        "on-error-container": "#93000a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "touch-target-min": "48px",
+                        "gutter": "16px",
+                        "container-padding": "24px",
+                        "unit": "8px",
+                        "section-gap": "40px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "button": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h2": ["22px", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "button": ["16px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "h1": ["28px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    },
+                    boxShadow: {
+                        'soft-ambient': '0 4px 20px rgba(13, 148, 136, 0.05)',
+                        'card-active': '0 12px 30px rgba(13, 148, 136, 0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container pb-32">
+<!-- JSON Component: TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 h-16 bg-[#FAFAF5] dark:bg-slate-900 border-b border-[#0D9488]/10 dark:border-white/5 shadow-[0_4px_20px_rgba(13,148,136,0.05)] rounded-b-[24px]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#0D9488] dark:text-[#2DD4BF]">spa</span>
+<span class="text-xl font-bold text-[#0D9488] dark:text-[#2DD4BF] tracking-tighter">Ketenangan</span>
+</div>
+<button aria-label="S.O.S" class="flex items-center justify-center bg-[#0F766E] text-white w-11 h-11 rounded-full shadow-sm hover:opacity-90 active:scale-95 transition-transform duration-200">
+<span class="text-sm font-bold">SOS</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="pt-24 px-container-padding max-w-md mx-auto">
+<!-- Greeting Section -->
+<section class="mb-8">
+<h1 class="text-[22px] font-bold text-[#0D9488] mb-2 leading-tight">Assalamu'alaikum, Ahmad 👋</h1>
+<p class="text-[15px] text-[#4B5563] leading-[1.6]">Mulai hari dengan satu langkah kecil. Lambungmu butuh itu.</p>
+</section>
+<!-- CARD 1: Jalan Pemulihan (RoadStage 1) -->
+<section class="mb-6">
+<div class="bg-white rounded-[24px] p-5 shadow-soft-ambient border border-transparent">
+<h2 class="text-[11px] font-semibold text-[#0D9488] tracking-wider uppercase mb-4">JALAN PEMULIHANMU</h2>
+<div class="bg-[#F8FAFC] rounded-2xl h-32 mb-4 flex items-center justify-center overflow-hidden relative">
+<!-- SVG Road Illustration placeholder -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#F1F5F9]"></div>
+<svg class="w-full h-full text-[#94A3B8] opacity-50" fill="none" viewbox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M60 100C80 60 70 40 100 0" stroke="currentColor" stroke-linecap="round" stroke-width="20"></path>
+<circle cx="85" cy="40" fill="#CBD5E1" r="15"></circle>
+<circle cx="75" cy="70" fill="#CBD5E1" r="10"></circle>
+</svg>
+</div>
+<p class="text-[14px] text-[#4B5563] leading-relaxed">
+                    Perbaikannya sudah dimulai. Sedikit demi sedikit, jalannya makin enak dilewati.
+                </p>
+</div>
+</section>
+<!-- CARD 2: Misi Hari Ini -->
+<section class="mb-6">
+<div class="bg-white rounded-[24px] p-5 shadow-soft-ambient">
+<h2 class="text-[11px] font-semibold text-[#0D9488] tracking-wider uppercase mb-3">MISI HARI INI — METODE 3P+</h2>
+<p class="text-[14px] text-[#4B5563] mb-4">Selesaikan 3 langkah pemulihan hari ini.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center px-3 py-1.5 rounded-full border border-[#0D9488] text-[#0D9488] text-[13px] font-medium bg-white">
+                        🧠 Pola Pikir
+                    </span>
+<span class="inline-flex items-center px-3 py-1.5 rounded-full border border-[#0D9488] text-[#0D9488] text-[13px] font-medium bg-white">
+                        🍽️ Pola Makan
+                    </span>
+<span class="inline-flex items-center px-3 py-1.5 rounded-full border border-[#0D9488] text-[#0D9488] text-[13px] font-medium bg-white">
+                        🌙 Pola Tidur
+                    </span>
+</div>
+<p class="text-[12px] text-[#6B7280] italic">
+                    Misi hari ini belum dimulai — yuk buka satu langkah kecil. 🌿
+                </p>
+</div>
+</section>
+<!-- CARD 3: Progres Program -->
+<section class="mb-section-gap">
+<div class="bg-white rounded-[24px] p-5 shadow-soft-ambient border-l-4 border-secondary-container">
+<h2 class="text-[11px] font-semibold text-[#6B7280] tracking-wider uppercase mb-1">PROGRES PROGRAM</h2>
+<p class="text-[14px] font-bold text-[#1F2937] mb-4">Hari ke-1 dari 14 hari ikhtiar</p>
+<div class="mb-2 relative">
+<div class="w-full h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
+<div class="h-full bg-[#0D9488] rounded-full" style="width: 7%;"></div>
+</div>
+</div>
+<div class="flex justify-between items-center mb-5">
+<span class="text-[10px] text-[#6B7280] font-medium">AWAL</span>
+<span class="text-[10px] font-bold text-[#0D9488]">HARI KE-1</span>
+<span class="text-[10px] text-[#6B7280] font-medium">SELESAI</span>
+</div>
+<div class="bg-[#D1FAE5] rounded-full px-4 py-2 inline-block">
+<p class="text-[#0D9488] text-[13px] font-medium">
+                        Kamu sudah memulai. Langkah pertama adalah yang paling berani. 💚
+                    </p>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<section class="flex flex-col gap-3 mb-8">
+<button class="w-full h-[52px] bg-[#0D9488] text-white rounded-[16px] font-bold text-[16px] shadow-sm active:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+                📋 Isi Misi Hari Ini
+            </button>
+<button class="w-full h-[52px] bg-white text-[#0D9488] border-[1.5px] border-[#0D9488] rounded-[16px] font-semibold text-[16px] active:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+                📖 Baca Materi Hari Ini
+            </button>
+</section>
+<!-- Footer -->
+<footer class="text-center pb-8">
+<p class="text-[11px] text-[#9CA3AF]">v4.0 · KangAsep · Ikhtiar Membawa Pulih</p>
+</footer>
+</main>
+<!-- JSON Component: BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 h-24 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-t-[32px] border-t border-[#0D9488]/5 dark:border-white/5 shadow-[0_-8px_30px_rgba(13,148,136,0.08)] md:hidden">
+<!-- Active Tab: Beranda -->
+<button class="flex flex-col items-center justify-center bg-[#0D9488]/10 dark:bg-[#0D9488]/20 text-[#0D9488] dark:text-[#2DD4BF] rounded-[24px] px-5 py-2 w-full active:scale-95 transition-all ease-in-out duration-300 touch-none">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-medium">Beranda</span>
+</button>
+<!-- Inactive Tab: Jurnal -->
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 w-full hover:text-[#0D9488] dark:hover:text-[#2DD4BF] transition-all">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-medium">Jurnal</span>
+</button>
+<!-- Inactive Tab: Komunitas -->
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 w-full hover:text-[#0D9488] dark:hover:text-[#2DD4BF] transition-all">
+<span class="material-symbols-outlined mb-1">groups</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-medium">Komunitas</span>
+</button>
+<!-- Inactive Tab: Profil -->
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 w-full hover:text-[#0D9488] dark:hover:text-[#2DD4BF] transition-all">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-medium">Profil</span>
+</button>
+</nav>
+<!-- Web Navigation (Hidden on mobile, matches topbar structure) -->
+<div class="hidden md:flex fixed top-0 right-6 h-16 items-center gap-6 z-50">
+<button class="text-[#0D9488] font-bold text-sm">Beranda</button>
+<button class="text-slate-400 hover:text-[#0D9488] text-sm font-medium transition-colors">Jurnal</button>
+<button class="text-slate-400 hover:text-[#0D9488] text-sm font-medium transition-colors">Komunitas</button>
+<button class="text-slate-400 hover:text-[#0D9488] text-sm font-medium transition-colors">Profil</button>
+</div>
+</body></html>

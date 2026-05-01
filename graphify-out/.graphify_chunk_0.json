@@ -1,0 +1,169 @@
+{
+  "nodes": [
+    {
+      "id": "useappstate_useappstate",
+      "label": "useAppState Hook",
+      "file_type": "code",
+      "source_file": "src/hooks/useAppState.jsx"
+    },
+    {
+      "id": "useappstate_appstateprovider",
+      "label": "AppStateProvider",
+      "file_type": "code",
+      "source_file": "src/hooks/useAppState.jsx"
+    },
+    {
+      "id": "app_component",
+      "label": "App Main Component",
+      "file_type": "code",
+      "source_file": "src/App.jsx"
+    },
+    {
+      "id": "homescreen_component",
+      "label": "HomeScreen Page",
+      "file_type": "code",
+      "source_file": "src/pages/HomeScreen.jsx"
+    },
+    {
+      "id": "homescreen_card",
+      "label": "HomeScreen UI Cards (rounded-[28px])",
+      "file_type": "code",
+      "source_file": "src/pages/HomeScreen.jsx"
+    },
+    {
+      "id": "misiscreen_component",
+      "label": "MisiScreen Page",
+      "file_type": "code",
+      "source_file": "src/pages/MisiScreen.jsx"
+    },
+    {
+      "id": "misiscreen_card",
+      "label": "MisiScreen UI Cards (rounded-[28px])",
+      "file_type": "code",
+      "source_file": "src/pages/MisiScreen.jsx"
+    },
+    {
+      "id": "materiscreen_component",
+      "label": "MateriScreen Page",
+      "file_type": "code",
+      "source_file": "src/pages/MateriScreen.jsx"
+    },
+    {
+      "id": "materiscreen_card",
+      "label": "MateriScreen UI Cards (rounded-[28px])",
+      "file_type": "code",
+      "source_file": "src/pages/MateriScreen.jsx"
+    },
+    {
+      "id": "profilescreen_component",
+      "label": "ProfileScreen Page",
+      "file_type": "code",
+      "source_file": "src/pages/ProfileScreen.jsx"
+    },
+    {
+      "id": "profilescreen_card",
+      "label": "ProfileScreen UI Cards (rounded-[28px])",
+      "file_type": "code",
+      "source_file": "src/pages/ProfileScreen.jsx"
+    },
+    {
+      "id": "index_css_tokens",
+      "label": "CSS Tokens (shadow-card-md, rounded-[28px])",
+      "file_type": "code",
+      "source_file": "src/index.css"
+    },
+    {
+      "id": "idb_storage",
+      "label": "IndexedDB Storage (idb-keyval)",
+      "file_type": "code",
+      "source_file": "src/hooks/useAppState.jsx"
+    }
+  ],
+  "edges": [
+    {
+      "source": "app_component",
+      "target": "useappstate_useappstate",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "homescreen_component",
+      "target": "useappstate_useappstate",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "misiscreen_component",
+      "target": "useappstate_useappstate",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "profilescreen_component",
+      "target": "useappstate_useappstate",
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "homescreen_card",
+      "target": "useappstate_useappstate",
+      "relation": "triggers_action",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "misiscreen_card",
+      "target": "useappstate_useappstate",
+      "relation": "triggers_action",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "profilescreen_card",
+      "target": "useappstate_useappstate",
+      "relation": "triggers_action",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "source": "homescreen_card",
+      "target": "index_css_tokens",
+      "relation": "styled_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9
+    },
+    {
+      "source": "misiscreen_card",
+      "target": "index_css_tokens",
+      "relation": "styled_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9
+    },
+    {
+      "source": "materiscreen_card",
+      "target": "index_css_tokens",
+      "relation": "styled_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9
+    },
+    {
+      "source": "profilescreen_card",
+      "target": "index_css_tokens",
+      "relation": "styled_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9
+    },
+    {
+      "source": "useappstate_useappstate",
+      "target": "idb_storage",
+      "relation": "persists_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": []
+}

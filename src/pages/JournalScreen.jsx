@@ -55,13 +55,13 @@ export default function JournalScreen({ currentDay, todayEntry, todaySaved, onSa
           <div className="flex items-center gap-3">
             <button 
               onClick={onBack}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 text-slate-600 active:scale-90 transition-all"
+              className="w-11 h-11 flex items-center justify-center rounded-full bg-slate-50 text-slate-600 active:scale-90 transition-all"
             >
               <span className="material-symbols-outlined">arrow_back</span>
             </button>
             <div>
               <h1 className="text-lg font-bold text-slate-900 leading-tight">Jurnal Hari {currentDay}</h1>
-              <p className="text-[10px] font-bold text-teal-600 uppercase tracking-widest">Catatan Ikhtiar</p>
+              <p className="text-[10px] font-bold text-primary uppercase tracking-widest">Catatan Ikhtiar</p>
             </div>
           </div>
           <div className="flex items-center gap-1.5 bg-amber-50 border border-amber-100 px-3 py-1.5 rounded-full">
@@ -166,8 +166,8 @@ export default function JournalScreen({ currentDay, todayEntry, todaySaved, onSa
               value={entry.conditionScores.sleepQuality} 
               onChange={(v) => handleScore('sleepQuality', v)}
               disabled={todaySaved}
-              color="text-teal-500"
-              bg="bg-teal-500"
+              color="text-primary/50"
+              bg="bg-primary/50"
             />
           </div>
         </section>
@@ -206,14 +206,14 @@ export default function JournalScreen({ currentDay, todayEntry, todaySaved, onSa
               disabled={todaySaved}
               value={entry.triggers}
               onChange={(e) => setEntry(prev => ({ ...prev, triggers: e.target.value }))}
-              className="w-full bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 focus:border-primary/50 outline-none transition-all text-sm min-h-[120px] resize-none"
+              className="w-full bg-white rounded-[28px] p-6 shadow-sm border border-slate-100 focus:border-primary/50 outline-none transition-all text-sm min-h-[120px] resize-none"
             />
             <textarea
               placeholder="Alhamdulillah, satu hal yang disyukuri..."
               disabled={todaySaved}
               value={entry.gratitude}
               onChange={(e) => setEntry(prev => ({ ...prev, gratitude: e.target.value }))}
-              className="w-full bg-white rounded-[24px] p-6 shadow-sm border border-slate-100 focus:border-primary/50 outline-none transition-all text-sm min-h-[120px] resize-none"
+              className="w-full bg-white rounded-[28px] p-6 shadow-sm border border-slate-100 focus:border-primary/50 outline-none transition-all text-sm min-h-[120px] resize-none"
             />
           </div>
         </section>
@@ -222,7 +222,7 @@ export default function JournalScreen({ currentDay, todayEntry, todaySaved, onSa
           <div className="pt-4 space-y-4">
             <button 
               onClick={() => onSave(entry)}
-              className="w-full py-5 bg-teal-600 text-white rounded-[24px] font-bold text-lg shadow-lg shadow-teal-600/20 active:scale-95 transition-transform"
+              className="w-full py-5 bg-primary text-white rounded-[28px] font-bold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-transform"
             >
               Simpan & Lanjut
             </button>
@@ -232,8 +232,8 @@ export default function JournalScreen({ currentDay, todayEntry, todaySaved, onSa
           </div>
         ) : (
           <div className="pt-4">
-            <div className="w-full py-5 bg-teal-50 border-2 border-teal-100 text-teal-700 rounded-[24px] font-bold text-center flex items-center justify-center gap-2">
-              <span className="material-symbols-outlined text-teal-600">task_alt</span>
+            <div className="w-full py-5 bg-primary/5 border-2 border-teal-100 text-teal-700 rounded-[24px] font-bold text-center flex items-center justify-center gap-2">
+              <span className="material-symbols-outlined text-primary">task_alt</span>
               Alhamdulillah, Jurnal Tersimpan
             </div>
           </div>

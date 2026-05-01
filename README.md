@@ -1,4 +1,4 @@
-# Kang Asep Holistik — Companion App
+# Lambung Tenang — Companion App
 **Metode 3P+ | Program Ikhtiar 14 Hari | Asri Companion Design System**
 
 Aplikasi pendamping pemulihan holistik GERD-Anxiety yang menggabungkan edukasi saraf vagus (Pola Pikir), nutrisi Walmagh (Pola Makan), dan optimasi istirahat (Pola Tidur).

@@ -78,7 +78,7 @@ function StarRing() {
       />
       {/* Ring pulse 2 — offset phase */}
       <motion.div
-        className="absolute inset-0 rounded-full border-2 border-teal-500/30"
+        className="absolute inset-0 rounded-full border-2 border-primary/50/30"
         animate={{ scale: [1, 1.9], opacity: [0.5, 0] }}
         transition={{ repeat: Infinity, duration: 1.8, ease: 'easeOut', delay: 0.6 }}
       />
@@ -131,7 +131,7 @@ export default function SuccessScreen({ onContinue, xpEarned = 100 }) {
         transition={{ delay: 0.25, type: 'spring', stiffness: 260, damping: 20 }}
         className="text-3xl font-black text-primary mb-3 tracking-tighter leading-tight"
       >
-        SubhanAllah,<br />Satu Langkah Hebat!
+        Lambung Tenang
       </motion.h1>
 
       {/* ── Affirmation quote ── */}

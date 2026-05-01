@@ -1,0 +1,1028 @@
+{
+  "nodes": [
+    {
+      "id": "src_app_jsx",
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src\\App.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_app",
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src\\App.jsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_main_jsx",
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "src\\main.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "main_approot",
+      "label": "AppRoot()",
+      "file_type": "code",
+      "source_file": "src\\main.jsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_components_ui_bottomnavbar_jsx",
+      "label": "BottomNavBar.jsx",
+      "file_type": "code",
+      "source_file": "src\\components\\ui\\BottomNavBar.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "bottomnavbar_bottomnavbar",
+      "label": "BottomNavBar()",
+      "file_type": "code",
+      "source_file": "src\\components\\ui\\BottomNavBar.jsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_components_ui_quotamodal_jsx",
+      "label": "QuotaModal.jsx",
+      "file_type": "code",
+      "source_file": "src\\components\\ui\\QuotaModal.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "quotamodal_quotamodal",
+      "label": "QuotaModal()",
+      "file_type": "code",
+      "source_file": "src\\components\\ui\\QuotaModal.jsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_components_ui_topappbar_jsx",
+      "label": "TopAppBar.jsx",
+      "file_type": "code",
+      "source_file": "src\\components\\ui\\TopAppBar.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "topappbar_topappbar",
+      "label": "TopAppBar()",
+      "file_type": "code",
+      "source_file": "src\\components\\ui\\TopAppBar.jsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_data_lessons_js",
+      "label": "lessons.js",
+      "file_type": "code",
+      "source_file": "src\\data\\lessons.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "lessons_getlessonbyday",
+      "label": "getLessonByDay()",
+      "file_type": "code",
+      "source_file": "src\\data\\lessons.js",
+      "source_location": "L175"
+    },
+    {
+      "id": "src_data_materials_js",
+      "label": "materials.js",
+      "file_type": "code",
+      "source_file": "src\\data\\materials.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "materials_getallmaterials",
+      "label": "getAllMaterials()",
+      "file_type": "code",
+      "source_file": "src\\data\\materials.js",
+      "source_location": "L83"
+    },
+    {
+      "id": "materials_getmaterialbyid",
+      "label": "getMaterialById()",
+      "file_type": "code",
+      "source_file": "src\\data\\materials.js",
+      "source_location": "L84"
+    },
+    {
+      "id": "src_data_motivations_js",
+      "label": "motivations.js",
+      "file_type": "code",
+      "source_file": "src\\data\\motivations.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_phases_js",
+      "label": "phases.js",
+      "file_type": "code",
+      "source_file": "src\\data\\phases.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "phases_getphase",
+      "label": "getPhase()",
+      "file_type": "code",
+      "source_file": "src\\data\\phases.js",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_hooks_useappstate_jsx",
+      "label": "useAppState.jsx",
+      "file_type": "code",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "useappstate_appreducer",
+      "label": "appReducer()",
+      "file_type": "code",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L45"
+    },
+    {
+      "id": "useappstate_appstateprovider",
+      "label": "AppStateProvider()",
+      "file_type": "code",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L112"
+    },
+    {
+      "id": "useappstate_useappstate",
+      "label": "useAppState()",
+      "file_type": "code",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L293"
+    },
+    {
+      "id": "src_pages_homescreen_jsx",
+      "label": "HomeScreen.jsx",
+      "file_type": "code",
+      "source_file": "src\\pages\\HomeScreen.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "homescreen_homescreen",
+      "label": "HomeScreen()",
+      "file_type": "code",
+      "source_file": "src\\pages\\HomeScreen.jsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_pages_journalscreen_jsx",
+      "label": "JournalScreen.jsx",
+      "file_type": "code",
+      "source_file": "src\\pages\\JournalScreen.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "journalscreen_journalscreen",
+      "label": "JournalScreen()",
+      "file_type": "code",
+      "source_file": "src\\pages\\JournalScreen.jsx",
+      "source_location": "L24"
+    },
+    {
+      "id": "journalscreen_scoreslider",
+      "label": "ScoreSlider()",
+      "file_type": "code",
+      "source_file": "src\\pages\\JournalScreen.jsx",
+      "source_location": "L248"
+    },
+    {
+      "id": "src_pages_komunitasscreen_jsx",
+      "label": "KomunitasScreen.jsx",
+      "file_type": "code",
+      "source_file": "src\\pages\\KomunitasScreen.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "komunitasscreen_komunitasscreen",
+      "label": "KomunitasScreen()",
+      "file_type": "code",
+      "source_file": "src\\pages\\KomunitasScreen.jsx",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_pages_materiscreen_jsx",
+      "label": "MateriScreen.jsx",
+      "file_type": "code",
+      "source_file": "src\\pages\\MateriScreen.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "materiscreen_materiscreen",
+      "label": "MateriScreen()",
+      "file_type": "code",
+      "source_file": "src\\pages\\MateriScreen.jsx",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_pages_misiscreen_jsx",
+      "label": "MisiScreen.jsx",
+      "file_type": "code",
+      "source_file": "src\\pages\\MisiScreen.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "misiscreen_misiscreen",
+      "label": "MisiScreen()",
+      "file_type": "code",
+      "source_file": "src\\pages\\MisiScreen.jsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_pages_onboardingscreen_jsx",
+      "label": "OnboardingScreen.jsx",
+      "file_type": "code",
+      "source_file": "src\\pages\\OnboardingScreen.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "onboardingscreen_onboardingscreen",
+      "label": "OnboardingScreen()",
+      "file_type": "code",
+      "source_file": "src\\pages\\OnboardingScreen.jsx",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_pages_profilescreen_jsx",
+      "label": "ProfileScreen.jsx",
+      "file_type": "code",
+      "source_file": "src\\pages\\ProfileScreen.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "profilescreen_profilescreen",
+      "label": "ProfileScreen()",
+      "file_type": "code",
+      "source_file": "src\\pages\\ProfileScreen.jsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_pages_sosscreen_jsx",
+      "label": "SOSScreen.jsx",
+      "file_type": "code",
+      "source_file": "src\\pages\\SOSScreen.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "sosscreen_sosscreen",
+      "label": "SOSScreen()",
+      "file_type": "code",
+      "source_file": "src\\pages\\SOSScreen.jsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_pages_successscreen_jsx",
+      "label": "SuccessScreen.jsx",
+      "file_type": "code",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "successscreen_firecelebration",
+      "label": "fireCelebration()",
+      "file_type": "code",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "successscreen_xpcounter",
+      "label": "XPCounter()",
+      "file_type": "code",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L48"
+    },
+    {
+      "id": "successscreen_starring",
+      "label": "StarRing()",
+      "file_type": "code",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L70"
+    },
+    {
+      "id": "successscreen_successscreen",
+      "label": "SuccessScreen()",
+      "file_type": "code",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L98"
+    },
+    {
+      "id": "src_utils_xp_js",
+      "label": "xp.js",
+      "file_type": "code",
+      "source_file": "src\\utils\\xp.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "xp_calcdaynumber",
+      "label": "calcDayNumber()",
+      "file_type": "code",
+      "source_file": "src\\utils\\xp.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "xp_calcxp",
+      "label": "calcXP()",
+      "file_type": "code",
+      "source_file": "src\\utils\\xp.js",
+      "source_location": "L13"
+    }
+  ],
+  "edges": [
+    {
+      "source": "src_app_jsx",
+      "target": "src_hooks_useappstate_tsx",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_pages_onboardingscreen",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_pages_homescreen",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_pages_journalscreen",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_pages_misiscreen",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_pages_sosscreen",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_pages_materiscreen",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_pages_profilescreen",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_pages_successscreen",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "src_pages_komunitasscreen",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_jsx",
+      "target": "app_app",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\App.jsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "client",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "src_app",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "src_hooks_useappstate_tsx",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "src_components_ui_quotamodal",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "src_index_css",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main_jsx",
+      "target": "main_approot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\main.jsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_bottomnavbar_jsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\ui\\BottomNavBar.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_bottomnavbar_jsx",
+      "target": "bottomnavbar_bottomnavbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\ui\\BottomNavBar.jsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_quotamodal_jsx",
+      "target": "quotamodal_quotamodal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\ui\\QuotaModal.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_topappbar_jsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\ui\\TopAppBar.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_topappbar_jsx",
+      "target": "topappbar_topappbar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\components\\ui\\TopAppBar.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_lessons_js",
+      "target": "lessons_getlessonbyday",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\data\\lessons.js",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_materials_js",
+      "target": "materials_getallmaterials",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\data\\materials.js",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_materials_js",
+      "target": "materials_getmaterialbyid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\data\\materials.js",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_phases_js",
+      "target": "phases_getphase",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\data\\phases.js",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useappstate_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useappstate_jsx",
+      "target": "idb_keyval",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useappstate_jsx",
+      "target": "src_utils_xp",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useappstate_jsx",
+      "target": "useappstate_appreducer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useappstate_jsx",
+      "target": "useappstate_appstateprovider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useappstate_jsx",
+      "target": "useappstate_useappstate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\hooks\\useAppState.jsx",
+      "source_location": "L293",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homescreen_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\HomeScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homescreen_jsx",
+      "target": "src_components_ui_bottomnavbar",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\HomeScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homescreen_jsx",
+      "target": "src_hooks_useappstate",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\HomeScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homescreen_jsx",
+      "target": "homescreen_homescreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\HomeScreen.jsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_journalscreen_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\JournalScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_journalscreen_jsx",
+      "target": "src_utils_xp",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\JournalScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_journalscreen_jsx",
+      "target": "src_components_ui_bottomnavbar",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\JournalScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_journalscreen_jsx",
+      "target": "journalscreen_journalscreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\JournalScreen.jsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_journalscreen_jsx",
+      "target": "journalscreen_scoreslider",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\JournalScreen.jsx",
+      "source_location": "L248",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_komunitasscreen_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\KomunitasScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_komunitasscreen_jsx",
+      "target": "src_hooks_useappstate",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\KomunitasScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_komunitasscreen_jsx",
+      "target": "src_components_ui_bottomnavbar",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\KomunitasScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_komunitasscreen_jsx",
+      "target": "komunitasscreen_komunitasscreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\KomunitasScreen.jsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_materiscreen_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\MateriScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_materiscreen_jsx",
+      "target": "src_data_materials",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\MateriScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_materiscreen_jsx",
+      "target": "src_components_ui_bottomnavbar",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\MateriScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_materiscreen_jsx",
+      "target": "materiscreen_materiscreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\MateriScreen.jsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_misiscreen_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\MisiScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_misiscreen_jsx",
+      "target": "src_data_lessons",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\MisiScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_misiscreen_jsx",
+      "target": "misiscreen_misiscreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\MisiScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_onboardingscreen_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\OnboardingScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_onboardingscreen_jsx",
+      "target": "onboardingscreen_onboardingscreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\OnboardingScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_profilescreen_jsx",
+      "target": "src_hooks_useappstate",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\ProfileScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_profilescreen_jsx",
+      "target": "src_components_ui_bottomnavbar",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\ProfileScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_profilescreen_jsx",
+      "target": "profilescreen_profilescreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\ProfileScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sosscreen_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\SOSScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sosscreen_jsx",
+      "target": "sosscreen_sosscreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\SOSScreen.jsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_successscreen_jsx",
+      "target": "framer_motion",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_successscreen_jsx",
+      "target": "react",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_successscreen_jsx",
+      "target": "canvas_confetti",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_successscreen_jsx",
+      "target": "successscreen_firecelebration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_successscreen_jsx",
+      "target": "successscreen_xpcounter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_successscreen_jsx",
+      "target": "successscreen_starring",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_successscreen_jsx",
+      "target": "successscreen_successscreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\pages\\SuccessScreen.jsx",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_xp_js",
+      "target": "xp_calcdaynumber",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\utils\\xp.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_utils_xp_js",
+      "target": "xp_calcxp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src\\utils\\xp.js",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "app_app",
+      "target": "useappstate_useappstate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\App.jsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "main_approot",
+      "target": "useappstate_useappstate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\main.jsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "homescreen_homescreen",
+      "target": "useappstate_useappstate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\pages\\HomeScreen.jsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "journalscreen_journalscreen",
+      "target": "xp_calcxp",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\pages\\JournalScreen.jsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "komunitasscreen_komunitasscreen",
+      "target": "useappstate_useappstate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\pages\\KomunitasScreen.jsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "misiscreen_misiscreen",
+      "target": "lessons_getlessonbyday",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\pages\\MisiScreen.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "profilescreen_profilescreen",
+      "target": "useappstate_useappstate",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src\\pages\\ProfileScreen.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}
