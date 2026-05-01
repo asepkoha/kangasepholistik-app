@@ -1,0 +1,14 @@
+{
+  "name": "Lambung Tenang",
+  "short_name": "LambungTenang",
+  "description": "Program Ikhtiar 14 Hari — Metode 3P+",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F7F6",
+  "theme_color": "#1D9E75",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/logo-ka.webp", "sizes": "192x192", "type": "image/webp" },
+    { "src": "/logo-ka.webp", "sizes": "512x512", "type": "image/webp" }
+  ]
+}
