@@ -1,145 +1,150 @@
 import { useState, useEffect, useRef } from 'react'
 
 const PHASES_BREATH = [
-  { label: 'Tarik', sub: '(Hidung)', duration: 4000 },
-  { label: 'Tahan', sub: '',         duration: 7000 },
-  { label: 'Buang', sub: '(Mulut)',  duration: 8000 },
+  { label: 'Tarik Napas', sub: 'Lewat Hidung', duration: 4000, scale: 1.5, opacity: 0.8 },
+  { label: 'Tahan', sub: 'Tetap Tenang', duration: 7000, scale: 1.5, opacity: 0.6 },
+  { label: 'Hembuskan', sub: 'Lewat Mulut', duration: 8000, scale: 1, opacity: 0.4 },
 ]
 
 export default function SOSScreen({ onBack }) {
   const [active, setActive] = useState(false)
   const [phaseIdx, setPhaseIdx] = useState(0)
-  const [scale, setScale] = useState(0.6)
-  const intervalRef = useRef(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const timerRef = useRef(null)
 
-  function startBreathing() {
+  const startBreathing = () => {
     setActive(true)
+    setIsPlaying(true)
     setPhaseIdx(0)
   }
 
   useEffect(() => {
-    if (!active) return
-    const ph = PHASES_BREATH[phaseIdx]
+    if (!isPlaying) return
 
-    // Animate scale
-    setScale(phaseIdx === 0 ? 1 : phaseIdx === 2 ? 0.6 : 0.9)
+    const phase = PHASES_BREATH[phaseIdx]
+    timerRef.current = setTimeout(() => {
+      setPhaseIdx((prev) => (prev + 1) % PHASES_BREATH.length)
+    }, phase.duration)
 
-    intervalRef.current = setTimeout(() => {
-      setPhaseIdx(prev => (prev + 1) % PHASES_BREATH.length)
-    }, ph.duration)
-
-    return () => clearTimeout(intervalRef.current)
-  }, [active, phaseIdx])
+    return () => clearTimeout(timerRef.current)
+  }, [isPlaying, phaseIdx])
 
   const currentPhase = PHASES_BREATH[phaseIdx]
 
   return (
-    <div className="page" style={{
-      background: active ? '#050F0A' : 'var(--bg)',
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      transition: 'background 0.8s ease',
-    }}>
+    <div className={`min-h-screen transition-colors duration-1000 flex flex-col ${
+      active ? 'bg-slate-950' : 'bg-background'
+    }`}>
+      {/* Header */}
+      {!active && (
+        <header className="fixed top-0 left-0 w-full z-50 flex items-center px-6 py-4 h-16 bg-background/80 backdrop-blur-md">
+          <button onClick={onBack} className="material-symbols-outlined text-slate-400">arrow_back</button>
+          <span className="ml-3 text-xl font-bold text-primary">Kembali</span>
+        </header>
+      )}
 
-      {!active ? (
-        // ── Calm page ──
-        <div className="container" style={{ paddingTop: 16, paddingBottom: 40 }}>
-          <button onClick={onBack}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 20, color: 'var(--text-2)', marginBottom: 16 }}>
-            ←
-          </button>
+      <main className="flex-1 flex flex-col items-center justify-center px-8 text-center">
+        {!active ? (
+          <div className="space-y-8 animate-fade-in max-w-sm">
+            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span className="material-symbols-outlined text-5xl text-primary animate-pulse">favorite</span>
+            </div>
+            
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-slate-800 tracking-tight">Tenang, Kamu Aman 🌿</h2>
+              <p className="text-slate-500 leading-relaxed">
+                Sensasi yang kamu rasakan nyata, tapi tidak berbahaya. Itu hanya sinyal dari saraf yang terlalu aktif. 
+                Yuk, kita tenangkan bersama.
+              </p>
+            </div>
 
-          <div className="card animate-fade-in" style={{ marginBottom: 16, textAlign: 'center', padding: '24px 20px' }}>
-            <div style={{ fontSize: 48, marginBottom: 12 }}>🤝</div>
-            <h2 style={{ marginBottom: 8 }}>Kamu Tidak Sendiri</h2>
-            <p style={{ fontSize: 14, lineHeight: 1.7, marginBottom: 20 }}>
-              Yang kamu rasakan sekarang nyata, tapi tidak berbahaya.
-              Ini respons sistem sarafmu yang terlalu aktif.
-              Kita tenangkan bersama dengan pernapasan.
-            </p>
-            <button className="btn btn-primary" onClick={startBreathing}>
-              Mulai Teknik Pernapasan
+            <button 
+              onClick={startBreathing}
+              className="w-full py-5 bg-primary text-white rounded-[24px] font-bold text-lg shadow-lg shadow-primary/20 active:scale-95 transition-transform"
+            >
+              Mulai Napas 4-7-8
+            </button>
+
+            <div className="p-6 bg-amber-50 rounded-[24px] border border-amber-100 text-left space-y-2">
+              <div className="flex items-center gap-2 text-amber-700">
+                <span className="material-symbols-outlined text-sm">info</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest">Penting</span>
+              </div>
+              <p className="text-[12px] text-amber-800/80 leading-relaxed italic">
+                Jika nyeri dada hebat, sesak parah, atau gejala sangat mengkhawatirkan, segera hubungi IGD atau tekan tombol di bawah.
+              </p>
+            </div>
+
+            <a 
+              href="tel:119"
+              className="inline-flex items-center gap-2 text-red-500 font-bold text-sm hover:underline"
+            >
+              <span className="material-symbols-outlined text-lg">call</span>
+              Panggil Darurat (119)
+            </a>
+          </div>
+        ) : (
+          <div className="space-y-12 animate-fade-in w-full max-w-md">
+            {/* Breathing Circle Container */}
+            <div className="relative flex items-center justify-center py-20">
+              {/* Outer Pulse Rings */}
+              <div className={`absolute w-64 h-64 border border-primary/20 rounded-full transition-transform duration-[4000ms] ease-in-out ${
+                phaseIdx === 0 ? 'scale-150 opacity-0' : 'scale-100 opacity-10'
+              }`}></div>
+              
+              {/* Main Circle */}
+              <div 
+                className="w-48 h-48 rounded-full bg-gradient-to-br from-primary to-teal-700 shadow-2xl shadow-primary/40 flex flex-col items-center justify-center transition-all ease-in-out"
+                style={{ 
+                  transform: `scale(${currentPhase.scale})`,
+                  opacity: currentPhase.opacity,
+                  transitionDuration: `${currentPhase.duration}ms`
+                }}
+              >
+                <span className="text-white text-2xl font-black mb-1">{currentPhase.label}</span>
+                <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest">{currentPhase.sub}</span>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex justify-center gap-3">
+                {PHASES_BREATH.map((_, i) => (
+                  <div 
+                    key={i}
+                    className={`h-1.5 rounded-full transition-all duration-500 ${
+                      phaseIdx === i ? 'w-8 bg-primary' : 'w-2 bg-slate-800'
+                    }`}
+                  ></div>
+                ))}
+              </div>
+              
+              <p className="text-slate-500 text-sm italic max-w-[280px] mx-auto leading-relaxed">
+                "SubhanAllah, setiap hembusan napas adalah perintah bagi tubuhmu untuk kembali tenang."
+              </p>
+            </div>
+
+            <button 
+              onClick={() => {
+                setActive(false)
+                setIsPlaying(false)
+              }}
+              className="px-10 py-4 bg-slate-900 text-slate-400 rounded-full border border-slate-800 text-sm font-bold active:scale-95 transition-all"
+            >
+              Sudah Lebih Tenang
             </button>
           </div>
+        )}
+      </main>
 
-          <div className="alert alert-warning" style={{ marginBottom: 12 }}>
-            <strong>Jika kamu mengalami:</strong> nyeri dada hebat, sesak napas parah, atau gejala yang sangat mengkhawatirkan —
-            <strong> segera hubungi tenaga medis atau pergi ke IGD.</strong>
-          </div>
-
-          <a href="tel:119"
-            className="btn btn-ghost"
-            style={{ textDecoration: 'none', marginBottom: 8 }}>
-            📞 Hubungi 119 (Darurat Medis)
-          </a>
-        </div>
-      ) : (
-        // ── Breathing exercise ──
-        <div style={{
-          flex: 1, display: 'flex', flexDirection: 'column',
-          alignItems: 'center', justifyContent: 'center',
-          padding: 24, textAlign: 'center',
-        }}>
-          {/* Breathing circle */}
-          <div style={{
-            width: 180, height: 180,
-            borderRadius: '50%',
-            border: '2px solid rgba(29,158,117,0.3)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            marginBottom: 40,
-            position: 'relative',
-          }}>
-            <div style={{
-              width: 120, height: 120,
-              borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(29,158,117,0.3) 0%, rgba(29,158,117,0.05) 100%)',
-              border: '2px solid rgba(29,158,117,0.5)',
-              display: 'flex', flexDirection: 'column',
-              alignItems: 'center', justifyContent: 'center',
-              transform: `scale(${scale})`,
-              transition: `transform ${currentPhase.duration}ms ease-in-out`,
-            }}>
-              <div style={{ fontSize: 18, fontWeight: 700, color: '#1D9E75' }}>
-                {currentPhase.label}
-              </div>
-              {currentPhase.sub && (
-                <div style={{ fontSize: 12, color: 'rgba(29,158,117,0.7)' }}>
-                  {currentPhase.sub}
-                </div>
-              )}
-            </div>
-          </div>
-
-          <h2 style={{ color: 'white', marginBottom: 8 }}>Tenangkan Pikiran</h2>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14, maxWidth: 260, lineHeight: 1.6, marginBottom: 40 }}>
-            Ikuti irama lingkaran. Tarik napas saat membesar, buang napas saat mengecil. Kamu aman.
-          </p>
-
-          {/* Phase indicators */}
-          <div style={{ display: 'flex', gap: 8, marginBottom: 40 }}>
-            {PHASES_BREATH.map((ph, i) => (
-              <div key={i} style={{
-                padding: '6px 14px',
-                borderRadius: 20,
-                fontSize: 12, fontWeight: 600,
-                background: phaseIdx === i ? '#1D9E75' : 'rgba(255,255,255,0.08)',
-                color: phaseIdx === i ? 'white' : 'rgba(255,255,255,0.4)',
-                transition: 'all 0.3s',
-              }}>{ph.label}</div>
-            ))}
-          </div>
-
-          <button
-            onClick={() => { setActive(false); setPhaseIdx(0) }}
-            style={{
-              background: 'rgba(255,255,255,0.1)',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 40, padding: '12px 32px',
-              color: 'white', fontSize: 14, cursor: 'pointer',
-            }}>
-            Saya Sudah Tenang
-          </button>
+      {/* Safety Bottom Label */}
+      {active && (
+        <div className="pb-10 text-center">
+           <a 
+              href="tel:119"
+              className="text-red-500/50 font-bold text-[10px] uppercase tracking-[0.2em] hover:text-red-500"
+            >
+              Emergency 119
+            </a>
         </div>
       )}
     </div>

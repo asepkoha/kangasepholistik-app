@@ -1,80 +1,56 @@
-# Walmagh App — Source Code
-**Kang Asep Holistik | Program Ikhtiar 14 Hari | Metode 3P+**
+# Kang Asep Holistik — Companion App
+**Metode 3P+ | Program Ikhtiar 14 Hari | Asri Companion Design System**
 
-## Struktur File
+Aplikasi pendamping pemulihan holistik GERD-Anxiety yang menggabungkan edukasi saraf vagus (Pola Pikir), nutrisi Walmagh (Pola Makan), dan optimasi istirahat (Pola Tidur).
+
+## Arsitektur Baru (Modular & Persistent)
 
 ```
 src/
-├── data/
-│   └── programData.js      ← EDIT DI SINI: konten VN, materi, pesan motivasi
+├── components/
+│   ├── home/         # Dashboard widgets (RecoveryChart, Teasers)
+│   └── ui/           # Shared components (BottomNavBar, Card)
+├── data/             # Modular Data Store
+│   ├── lessons.js    # Voice note content per hari
+│   ├── materials.js  # Topik edukasi modular (Deep-dive)
+│   ├── phases.js     # Definisi fase pemulihan
+│   └── motivations.js # Pesan dukungan harian
 ├── hooks/
-│   └── useAppState.js      ← State management + localStorage
+│   └── useAppState.jsx # State management (Context + useReducer + IndexedDB)
 ├── pages/
-│   ├── OnboardingScreen.jsx  ← Halaman setup profil
-│   ├── HomeScreen.jsx        ← Dashboard utama
-│   ├── JournalScreen.jsx     ← Input jurnal harian
-│   ├── LessonScreen.jsx      ← Reward + VN materi (POST-JURNAL)
-│   └── SOSScreen.jsx         ← Panic button + breathing
-├── App.jsx                 ← Router utama
-├── main.jsx                ← Entry point
-└── index.css               ← Global styles + brand colors
+│   ├── OnboardingScreen.jsx # Setup profil & tanggal mulai
+│   ├── HomeScreen.jsx       # Dashboard utama
+│   ├── MisiScreen.jsx       # Fokus harian (VN + Micro-Win)
+│   ├── JournalScreen.jsx    # Pencatatan ikhtiar harian
+│   ├── MateriScreen.jsx     # Perpustakaan edukasi
+│   ├── KomunitasScreen.jsx  # Forum dukungan sebaya
+│   └── SOSScreen.jsx        # Protokol darurat (Napas 4-4-6)
+├── utils/
+│   └── xp.js               # Logika perhitungan XP & Hari
+├── App.jsx                 # Global Routing & Navigation
+└── index.css               # Stitch Tokens & Tailwind v4
 ```
 
-## Setup
+## Teknologi
+
+- **React 18 + Vite**: Frontend modern & performant.
+- **Tailwind CSS v4**: Utility-first styling dengan Stitch tokens.
+- **IndexedDB (idb-keyval)**: Penyimpanan data lokal yang aman dan persisten (BUKAN localStorage).
+- **Recharts**: Visualisasi progres pemulihan.
+
+## Cara Penggunaan
 
 ```bash
 npm install
-npm run dev      # development
-npm run build    # build ke /dist
+npm run dev      # Menjalankan server lokal
+npm run build    # Membuat bundle produksi di /dist
 ```
 
-## Deploy ke Antigravity
-1. Push repo ini ke GitHub
-2. Connect repo di dashboard Antigravity
-3. Build command: `npm run build`
-4. Output directory: `dist`
+## Panduan Konten
 
-## Cara Tambah Audio VN
+1.  **Tambah Materi**: Edit `src/data/materials.js` untuk menambahkan topik deep-dive baru.
+2.  **Update VN**: Edit `src/data/lessons.js` dan letakkan file audio di `public/audio/`.
+3.  **XP Policy**: Logika XP dikunci di `src/utils/xp.js` untuk mencegah double-counting.
 
-Di file `src/data/programData.js`, edit field `audioUrl` per hari:
-
-```js
-{
-  day: 1,
-  title: 'Kenapa Pikiran Bisa Bikin Lambung Sakit?',
-  audioUrl: '/audio/vn-h1.mp3',   // ← taruh file MP3 di public/audio/
-  ...
-}
-```
-
-Letakkan file audio di folder `public/audio/`:
-- `public/audio/vn-h1.mp3`
-- `public/audio/vn-h2.mp3`
-- dst.
-
-## Nomor WA Mentor
-Di `src/pages/HomeScreen.jsx`, cari dan ganti:
-```
-62xxxxxxxxxx  →  nomor WA Kang Asep aktif
-```
-
-## Warna Brand
-Di `src/index.css`:
-- `--teal: #1D9E75` — warna utama
-- `--amber: #BA7517` — aksen
-- `--purple: #534AB7` — Fase 3
-
-## Skor Ikhtiar Harian (dari useAppState.js)
-| Kategori       | Poin |
-|----------------|------|
-| Suplemen Pagi  | 10   |
-| Suplemen Siang | 10   |
-| Suplemen Malam | 10   |
-| Patuh Pantangan| 10   |
-| Tekstur Lembut | 10   |
-| Kunyah 30x     | 10   |
-| Stop Jam 19.00 | 10   |
-| Tidur Cukup    | 10   |
-| Dzikir/Doa     | 10   |
-| Olah Napas     | 10   |
-| **Total**      | **100** |
+---
+**Status**: Production Ready.

@@ -1,297 +1,224 @@
-import { useMemo, useRef } from 'react'
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts'
-import { calcScore, calcStreak } from '../hooks/useAppState'
-import { PROGRAM_DAYS, DAILY_MOTIVATIONS, getPhase } from '../data/programData'
+import { useMemo } from 'react'
+import BottomNavBar from '../components/ui/BottomNavBar'
+import { useAppState } from '../hooks/useAppState'
+
+const PHASE_CONFIGS = [
+  { range: [1, 4],  label: 'Fase 1: Pola Pikir', icon: 'psychology', color: 'teal', hint: 'Menenangkan saraf vagus & mode Rest & Digest' },
+  { range: [5, 10], label: 'Fase 2: Pola Makan', icon: 'restaurant', color: 'amber', hint: 'Melapisi lambung dengan Semen Biologis' },
+  { range: [11, 14],label: 'Fase 3: Pola Tidur', icon: 'bedtime',    color: 'indigo', hint: 'Shift malam — sel repair bekerja optimal' },
+]
 
 export default function HomeScreen({
-  profile, journal, currentDay, todaySaved, streak,
-  isComplete, setScreen, backup, restore, resetAll,
+  profile,
+  currentDay,
+  todaySaved,
+  setScreen,
+  totalXP,
+  isComplete
 }) {
-  const restoreRef = useRef()
+  const { communityPosts } = useAppState()
+  const firstName = profile.name ? profile.name.split(' ')[0] : 'Pejuang'
+  const progressPercent = Math.min(Math.round(((currentDay - 1) / 14) * 100), 100)
 
-  const phase = getPhase(currentDay)
-  const progress = Math.round((currentDay / PROGRAM_DAYS) * 100)
-  const motivation = DAILY_MOTIVATIONS[(currentDay - 1) % DAILY_MOTIVATIONS.length]
+  const latestMentorPost = useMemo(() => 
+    communityPosts.find(p => p.isMentor),
+    [communityPosts]
+  )
 
-  // Stats dari semua hari yang sudah diisi
-  const stats = useMemo(() => {
-    const days = Object.values(journal)
-    if (!days.length) return { nyeri: '-', cemas: '-', panik: '-', tidur: '-', kambuh: '-' }
-    const last = days[days.length - 1]
-    return {
-      nyeri:  last.nyeri,
-      cemas:  last.cemas,
-      panik:  last.panik,
-      tidur:  last.tidur,
-      kambuh: last.kambuh + 'x',
-    }
-  }, [journal])
+  const phase = PHASE_CONFIGS.find(p => currentDay >= p.range[0] && currentDay <= p.range[1]) || PHASE_CONFIGS[2]
 
-  // Chart data
-  const chartData = useMemo(() => {
-    return Array.from({ length: currentDay }, (_, i) => {
-      const d = i + 1
-      const e = journal[d]
-      return {
-        day: 'H' + d,
-        nyeri:  e?.nyeri  ?? null,
-        cemas:  e?.cemas  ?? null,
-        kambuh: e?.kambuh ?? null,
-        tidur:  e?.tidur  ?? null,
-      }
-    })
-  }, [journal, currentDay])
-
-  // Rata-rata skor
-  const avgScore = useMemo(() => {
-    const entries = Object.values(journal).filter(e => e.savedAt)
-    if (!entries.length) return 0
-    return Math.round(entries.reduce((s, e) => s + calcScore(e), 0) / entries.length)
-  }, [journal])
-
-  // History table
-  const historyRows = useMemo(() => {
-    return Object.entries(journal)
-      .map(([day, e]) => ({ day: Number(day), ...e }))
-      .sort((a, b) => b.day - a.day)
-      .slice(0, 14)
-  }, [journal])
+  const greeting = useMemo(() => {
+    const hour = new Date().getHours()
+    if (hour < 11) return 'Selamat pagi'
+    if (hour < 15) return 'Selamat siang'
+    if (hour < 18) return 'Selamat sore'
+    return 'Selamat malam'
+  }, [])
 
   return (
-    <div className="page scroll-page" style={{ paddingBottom: 40 }}>
-      <div className="container" style={{ paddingTop: 16 }}>
-
-        {/* Header card */}
-        <div className="header-card">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-            <div>
-              <h2 style={{ color: 'white', marginBottom: 2 }}>Halo, {profile.name.split(' ')[0]} 👋</h2>
-              <p style={{ fontSize: 13 }}>{motivation}</p>
+    <div className="min-h-screen bg-[#FAFAF5] pb-32">
+      {/* Top App Bar */}
+      <header className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div className="max-w-md mx-auto px-6 py-4 flex items-center justify-between h-16">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-teal-100 rounded-xl flex items-center justify-center">
+              <span className="material-symbols-outlined text-teal-600 text-lg">spa</span>
             </div>
-            <span style={{
-              background: 'rgba(255,255,255,0.15)',
-              borderRadius: 20, padding: '3px 10px',
-              fontSize: 12, fontWeight: 600, color: 'white',
-            }}>
-              {phase.label}
-            </span>
+            <span className="font-bold text-teal-800 tracking-tight">Kang Asep</span>
           </div>
-
-          <div style={{ marginTop: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: 14, fontWeight: 700, color: 'white' }}>
-              Hari {currentDay} / {PROGRAM_DAYS}
-            </span>
-            <span style={{ fontSize: 14, fontWeight: 700, color: 'white' }}>{progress}%</span>
-          </div>
-          <div className="progress-bar">
-            <div className="progress-fill" style={{ width: progress + '%' }} />
-          </div>
-        </div>
-
-        {/* Complete banner */}
-        {isComplete && (
-          <div className="card animate-scale" style={{
-            background: 'linear-gradient(135deg, #0F6E56, #085041)',
-            color: 'white', textAlign: 'center', marginBottom: 16,
-          }}>
-            <div style={{ fontSize: 32, marginBottom: 8 }}>🏆</div>
-            <h2 style={{ color: 'white', marginBottom: 6 }}>Program Selesai!</h2>
-            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 13, marginBottom: 16 }}>
-              Alhamdulillah, kamu sudah menyelesaikan 14 hari.
-              Lanjut program Maintenance agar hasilnya lebih stabil.
-            </p>
-            <button className="btn" style={{ background: 'white', color: 'var(--teal-dark)', fontWeight: 700 }}>
-              Lanjut Maintenance →
-            </button>
-          </div>
-        )}
-
-        {/* SOS */}
-        <button className="sos-btn" onClick={() => setScreen('sos')}>
-          ♥ SAYA SEDANG PANIK (SOS)
-        </button>
-
-        {/* Jurnal hari ini */}
-        {!isComplete && (
-          <div className="card" style={{ marginBottom: 12 }}>
-            {todaySaved ? (
-              <div style={{ textAlign: 'center', padding: '8px 0' }}>
-                <div style={{ fontSize: 28, marginBottom: 4 }}>✅</div>
-                <div style={{ fontWeight: 600, fontSize: 15 }}>Selesai Untuk Hari Ini</div>
-                <div style={{ fontSize: 13, color: 'var(--text-3)', marginTop: 4 }}>
-                  Jurnal dibuka kembali besok.
-                </div>
-              </div>
-            ) : (
-              <>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                  <div style={{ fontWeight: 600 }}>📔 Jurnal Hari Ke-{currentDay}</div>
-                  <span style={{
-                    fontSize: 11, fontWeight: 600, padding: '2px 8px',
-                    borderRadius: 20, background: 'var(--teal-light)', color: 'var(--teal-dark)',
-                  }}>BELUM DIISI</span>
-                </div>
-                <p style={{ fontSize: 13, marginBottom: 12 }}>
-                  Isi jurnal malam ini untuk membuka materi hari ini dari Kang Asep.
-                </p>
-                <button className="btn btn-primary" onClick={() => setScreen('journal')}>
-                  Isi Jurnal Sekarang →
-                </button>
-              </>
-            )}
-          </div>
-        )}
-
-        {/* Streak + Stats */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 12 }}>
-          <div className="streak-badge" style={{ gridColumn: 1 }}>
-            <span style={{ fontSize: 20 }}>🔥</span>
-            <span className="streak-num">{streak}</span>
-            <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--text-3)' }}>STREAK</span>
-          </div>
-          <div className="metric-pill">
-            <div className="metric-val" style={{ color: 'var(--red)' }}>{stats.nyeri}</div>
-            <div className="metric-label">NYERI</div>
-          </div>
-          <div className="metric-pill">
-            <div className="metric-val" style={{ color: 'var(--orange)' }}>{stats.cemas}</div>
-            <div className="metric-label">CEMAS</div>
-          </div>
-          <div className="metric-pill">
-            <div className="metric-val" style={{ color: 'var(--red)' }}>{stats.panik}</div>
-            <div className="metric-label">PANIK</div>
-          </div>
-          <div className="metric-pill">
-            <div className="metric-val" style={{ color: 'var(--teal)' }}>{stats.tidur}</div>
-            <div className="metric-label">TIDUR</div>
-          </div>
-          <div className="metric-pill">
-            <div className="metric-val" style={{ color: 'var(--orange)' }}>{stats.kambuh}</div>
-            <div className="metric-label">KAMBUH/HARI</div>
-          </div>
-        </div>
-
-        {/* BB */}
-        {profile.weightStart && (
-          <div className="card" style={{ marginBottom: 12, padding: '12px 16px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14 }}>
-              <span style={{ color: 'var(--text-2)' }}>⚖️ Berat Badan</span>
-              <span style={{ fontWeight: 600 }}>
-                {profile.weightStart} kg → {Object.values(journal).reverse().find(e => e.weight)?.weight || '-'} kg
-              </span>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5 bg-amber-50 border border-amber-100 px-3 py-1 rounded-full">
+              <span className="text-amber-600 text-xs">⚡</span>
+              <span className="text-xs font-bold text-amber-700">{totalXP} XP</span>
             </div>
-          </div>
-        )}
-
-        {/* Grafik perkembangan */}
-        <div className="card" style={{ marginBottom: 12 }}>
-          <div style={{ fontWeight: 600, marginBottom: 12, fontSize: 14 }}>📈 Grafik Perkembangan</div>
-          <ResponsiveContainer width="100%" height={160}>
-            <LineChart data={chartData} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
-              <XAxis dataKey="day" tick={{ fontSize: 10, fill: 'var(--text-3)' }} />
-              <YAxis domain={[0, 10]} tick={{ fontSize: 10, fill: 'var(--text-3)' }} />
-              <Tooltip
-                contentStyle={{ fontSize: 12, borderRadius: 8, border: '0.5px solid var(--border)' }}
-                labelStyle={{ fontWeight: 600 }}
-              />
-              <Line type="monotone" dataKey="nyeri"  stroke="#E24B4A" dot={{ r: 3 }} strokeWidth={2} connectNulls={false} name="Nyeri" />
-              <Line type="monotone" dataKey="cemas"  stroke="#EF9F27" dot={{ r: 3 }} strokeWidth={2} connectNulls={false} name="Cemas" />
-              <Line type="monotone" dataKey="tidur"  stroke="#1D9E75" dot={{ r: 3 }} strokeWidth={2} connectNulls={false} name="Tidur" />
-            </LineChart>
-          </ResponsiveContainer>
-          <div style={{ display: 'flex', gap: 12, marginTop: 8, justifyContent: 'center' }}>
-            {[['Nyeri','#E24B4A'],['Cemas','#EF9F27'],['Tidur','#1D9E75']].map(([l,c]) => (
-              <div key={l} style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, color: 'var(--text-2)' }}>
-                <div style={{ width: 8, height: 8, borderRadius: '50%', background: c }} />
-                {l}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Statistik */}
-        <div className="card" style={{ marginBottom: 12, padding: '12px 16px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: 'var(--teal)' }}>
-                {avgScore}<span style={{ fontSize: 14, color: 'var(--text-3)', fontWeight: 400 }}>/100</span>
-              </div>
-              <div style={{ fontSize: 11, color: 'var(--text-3)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                Rata-Rata Kestabilan
-              </div>
-              <div style={{ fontSize: 12, color: avgScore >= 80 ? 'var(--teal)' : 'var(--orange)', marginTop: 2, fontWeight: 500 }}>
-                {avgScore >= 80 ? 'Ikhtiar Konsisten 🌿' : avgScore >= 50 ? 'Terus Semangat' : 'Ayo Kejar Ketertinggalan'}
-              </div>
-            </div>
-            <button
-              className="btn btn-outline btn-sm"
-              style={{ width: 'auto' }}
-              onClick={() => setScreen('lesson')}
+            <button 
+              onClick={() => setScreen('sos')}
+              className="w-9 h-9 bg-red-50 border border-red-100 text-red-600 rounded-xl flex items-center justify-center text-[11px] font-black active:scale-90 transition-all"
             >
-              Materi Hari Ini
+              SOS
             </button>
           </div>
         </div>
+      </header>
 
-        {/* Riwayat */}
-        {historyRows.length > 0 && (
-          <div className="card" style={{ marginBottom: 16 }}>
-            <div style={{ fontWeight: 600, marginBottom: 12, fontSize: 14 }}>🕐 Riwayat</div>
-            <table style={{ width: '100%', fontSize: 13, borderCollapse: 'collapse' }}>
-              <thead>
-                <tr>
-                  {['Hari','Nyeri','Cemas','Panik','Tidur'].map(h => (
-                    <th key={h} style={{ textAlign: 'left', color: 'var(--text-3)', fontWeight: 600, fontSize: 11, paddingBottom: 6, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {historyRows.map(row => (
-                  <tr key={row.day}>
-                    <td style={{ fontWeight: 700, color: 'var(--teal)', paddingBottom: 4 }}>H{row.day}</td>
-                    <td style={{ color: 'var(--red)', fontWeight: 600, paddingBottom: 4 }}>{row.nyeri ?? '-'}</td>
-                    <td style={{ color: 'var(--orange)', fontWeight: 600, paddingBottom: 4 }}>{row.cemas ?? '-'}</td>
-                    <td style={{ fontWeight: 600, paddingBottom: 4 }}>{row.panik ?? '-'}</td>
-                    <td style={{ color: 'var(--teal)', fontWeight: 600, paddingBottom: 4 }}>{row.tidur ?? '-'}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      <main className="max-w-md mx-auto px-6 pt-24 space-y-6 animate-in fade-in duration-500">
+
+        {/* Greeting */}
+        <section>
+          <p className="text-sm text-slate-400 font-medium mb-0.5">{greeting}, 👋</p>
+          <h1 className="text-2xl font-bold text-slate-900 leading-tight">{firstName}.</h1>
+          <p className="text-slate-500 text-sm mt-1 leading-relaxed">
+            {todaySaved 
+              ? 'MasyaAllah, misi hari ini sudah selesai. Istirahat dengan tenang ya 💚' 
+              : 'Yuk, mulai ikhtiar hari ini pelan-pelan. Bismillah.'}
+          </p>
+        </section>
+
+        {/* Day Status Card */}
+        <section>
+          <div className={`rounded-3xl p-6 border ${
+            todaySaved 
+              ? 'bg-teal-50 border-teal-100' 
+              : 'bg-white border-slate-100 shadow-sm'
+          }`}>
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-0.5">
+                  Hari ke-{currentDay} dari 14
+                </p>
+                <h2 className="text-base font-bold text-slate-900">{phase.label}</h2>
+              </div>
+              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
+                todaySaved ? 'bg-teal-600 text-white' : 'bg-teal-50 text-teal-600'
+              }`}>
+                <span className="material-symbols-outlined text-2xl">
+                  {todaySaved ? 'task_alt' : phase.icon}
+                </span>
+              </div>
+            </div>
+
+            {/* Progress Bar */}
+            <div className="mb-1">
+              <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-teal-600 rounded-full transition-all duration-1000"
+                  style={{ width: `${progressPercent}%` }}
+                />
+              </div>
+            </div>
+            <p className="text-[10px] text-slate-400 font-medium">{progressPercent}% perjalanan selesai</p>
           </div>
+        </section>
+
+        {/* CTA Buttons */}
+        <section className="grid gap-3">
+          <button 
+            onClick={() => setScreen(todaySaved ? 'journal' : 'misi')}
+            className="w-full py-4 bg-teal-600 text-white rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-teal-600/20 active:scale-95 transition-all"
+          >
+            <span className="material-symbols-outlined text-xl">
+              {todaySaved ? 'check_circle' : 'auto_stories'}
+            </span>
+            {todaySaved ? 'Lihat Ikhtiar Hari Ini' : 'Mulai Ikhtiar Hari Ini'}
+          </button>
+          {!todaySaved && (
+            <button 
+              onClick={() => setScreen('journal')}
+              className="w-full py-4 bg-white border border-slate-200 text-slate-700 rounded-2xl font-bold flex items-center justify-center gap-2 active:scale-95 transition-all"
+            >
+              <span className="material-symbols-outlined text-xl text-teal-600">edit_note</span>
+              Isi Jurnal Langsung
+            </button>
+          )}
+        </section>
+
+        {/* Phase Info Card */}
+        <section>
+          <div className="bg-white rounded-3xl p-5 border border-slate-100 shadow-sm">
+            <p className="text-[10px] font-black text-teal-600/60 uppercase tracking-widest mb-3">Sedang Dikerja</p>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-2xl bg-teal-50 flex items-center justify-center text-teal-600 shrink-0">
+                <span className="material-symbols-outlined">{phase.icon}</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-900 mb-1">{phase.label}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">{phase.hint}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Komunitas Teaser */}
+        {latestMentorPost && (
+          <section>
+            <div className="bg-gradient-to-br from-teal-900 to-teal-800 rounded-3xl p-6 relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-7 h-7 bg-amber-500 rounded-xl flex items-center justify-center font-bold text-white text-[11px]">K</div>
+                  <div>
+                    <span className="text-xs font-bold text-amber-300">Kang Asep</span>
+                    <span className="material-symbols-outlined text-amber-300 text-sm ml-1">verified</span>
+                  </div>
+                </div>
+                <p className="text-sm text-teal-100/90 leading-relaxed mb-4 line-clamp-2">
+                  "{latestMentorPost.content}"
+                </p>
+                <button 
+                  onClick={() => setScreen('komunitas')}
+                  className="px-4 py-2 bg-white/10 border border-white/20 text-white text-xs font-bold rounded-xl active:scale-95 transition-all"
+                >
+                  Buka Komunitas →
+                </button>
+              </div>
+              <span className="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl text-white/5 rotate-12">forum</span>
+            </div>
+          </section>
         )}
 
-        {/* Lapor mentor */}
-        <a
-          href={`https://wa.me/62xxxxxxxxxx?text=Laporan+H${currentDay}+${profile.name}`}
-          target="_blank" rel="noopener noreferrer"
-          className="btn btn-primary"
-          style={{ textDecoration: 'none', marginBottom: 12 }}
-        >
-          💬 LAPOR MENTOR
-        </a>
+        {/* Recovery Chart */}
+        <section>
+          <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="font-bold text-slate-900 text-sm">Grafik Ikhtiar</h3>
+                <p className="text-[10px] text-slate-400">Progres kumulatif 14 hari</p>
+              </div>
+              <span className="text-xl font-black text-teal-600">{(totalXP / 10).toFixed(0)}%</span>
+            </div>
+            {/* Simple visual bars */}
+            <div className="flex items-end gap-1.5 h-16">
+              {Array.from({ length: 14 }, (_, i) => {
+                const dayNum = i + 1
+                const done = dayNum < currentDay
+                const today = dayNum === currentDay
+                return (
+                  <div 
+                    key={i}
+                    className={`flex-1 rounded-t-sm transition-all ${
+                      done ? 'bg-teal-500' : today ? 'bg-teal-200 animate-pulse' : 'bg-slate-100'
+                    }`}
+                    style={{ height: done ? '100%' : today ? '60%' : '20%' }}
+                  />
+                )
+              })}
+            </div>
+            <div className="flex justify-between mt-2">
+              <span className="text-[9px] text-slate-400">H1</span>
+              <span className="text-[9px] font-bold text-teal-600">H{currentDay}</span>
+              <span className="text-[9px] text-slate-400">H14</span>
+            </div>
+          </div>
+        </section>
 
-        {/* Actions */}
-        <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
-          <button className="btn btn-ghost btn-sm" style={{ flex: 1 }} onClick={backup}>
-            ↓ Backup
-          </button>
-          <button className="btn btn-ghost btn-sm" style={{ flex: 1 }}
-            onClick={() => restoreRef.current?.click()}>
-            ↑ Restore
-          </button>
-          <button className="btn btn-danger btn-sm" style={{ flex: 1 }}
-            onClick={() => { if (confirm('Reset semua data?')) resetAll() }}>
-            🗑 Reset
-          </button>
-        </div>
+        {/* Footer */}
+        <footer className="pb-8 text-center">
+          <p className="text-[11px] text-slate-300 uppercase tracking-widest">
+            KangAsep Holistik · Ikhtiar Membawa Pulih
+          </p>
+        </footer>
+      </main>
 
-        <input type="file" ref={restoreRef} accept=".json"
-          style={{ display: 'none' }} onChange={e => { if (e.target.files[0]) restore(e.target.files[0]) }} />
-
-        <p style={{ textAlign: 'center', fontSize: 11, color: 'var(--text-3)' }}>
-          v1.0 · Kang Asep Holistik
-        </p>
-      </div>
+      <BottomNavBar activeScreen="home" onNavigate={setScreen} />
     </div>
   )
 }

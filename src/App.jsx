@@ -1,17 +1,23 @@
-import { useAppState } from './hooks/useAppState'
+import { useAppState } from './hooks/useAppState.jsx'
 import OnboardingScreen from './pages/OnboardingScreen'
 import HomeScreen       from './pages/HomeScreen'
 import JournalScreen    from './pages/JournalScreen'
-import LessonScreen     from './pages/LessonScreen'
+import MisiScreen      from './pages/MisiScreen'
 import SOSScreen        from './pages/SOSScreen'
+import MateriScreen     from './pages/MateriScreen'
+import ProfileScreen    from './pages/ProfileScreen'
+import SuccessScreen    from './pages/SuccessScreen'
+import KomunitasScreen  from './pages/KomunitasScreen'
 
 export default function App() {
   const app = useAppState()
+  
+  if (app.loading) return null
 
   // Route by screen
   const screen = app.screen
 
-  // First launch
+  // First launch or Onboarding
   if (!app.profile.committed || screen === 'onboarding') {
     return <OnboardingScreen onSave={app.saveProfile} />
   }
@@ -28,17 +34,51 @@ export default function App() {
         todaySaved={app.todaySaved}
         onSave={app.saveJournal}
         onBack={() => app.setScreen('home')}
+        setScreen={app.setScreen}
       />
     )
   }
 
-  if (screen === 'lesson') {
+  if (screen === 'misi' || screen === 'lesson') {
     return (
-      <LessonScreen
+      <MisiScreen
         currentDay={app.currentDay}
-        todayEntry={app.todayEntry}
-        lessonsSeen={app.lessonsSeen}
-        onDone={() => { app.markLessonSeen(app.currentDay) }}
+        onDone={() => { 
+          app.markLessonSeen(app.currentDay)
+          app.setScreen('journal') 
+        }}
+        setScreen={app.setScreen}
+      />
+    )
+  }
+
+  if (screen === 'materi') {
+    return (
+      <MateriScreen 
+        onBack={() => app.setScreen('home')} 
+        setScreen={app.setScreen} 
+      />
+    )
+  }
+
+  if (screen === 'profil') {
+    return <ProfileScreen setScreen={app.setScreen} />
+  }
+  if (screen === 'success') {
+    return (
+      <SuccessScreen
+        onContinue={() => app.setScreen('home')}
+        xpEarned={app.todayEntry?.xpEarned ?? 100}
+      />
+    )
+  }
+
+  
+  if (screen === 'komunitas') {
+    return (
+      <KomunitasScreen 
+        onBack={() => app.setScreen('home')} 
+        setScreen={app.setScreen}
       />
     )
   }
@@ -50,12 +90,9 @@ export default function App() {
       journal={app.journal}
       currentDay={app.currentDay}
       todaySaved={app.todaySaved}
-      streak={app.streak}
+      totalXP={app.totalXP}
       isComplete={app.isComplete}
       setScreen={app.setScreen}
-      backup={app.backup}
-      restore={app.restore}
-      resetAll={app.resetAll}
     />
   )
 }
