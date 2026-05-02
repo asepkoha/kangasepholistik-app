@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from 'react'
 import confetti from 'canvas-confetti'
 
 // ─── Brand colors ─────────────────────────────────────────────────────────────
-const TEAL   = '#0D5C4A'
-const TEAL2  = '#0D9488'
+const TEAL   = '#10B981'
+const TEAL2  = '#059669'
 const AMBER  = '#E8A020'
 const AMBER2 = '#F59E0B'
-const GREEN  = '#10B981'
+const GREEN  = '#34D399'
 
 // ─── Multi-wave confetti burst ─────────────────────────────────────────────────
 function fireCelebration() {

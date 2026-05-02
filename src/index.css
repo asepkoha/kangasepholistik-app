@@ -2,28 +2,33 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0D5C4A;
-  --color-primary-dark: #0A4A3C;
+  --color-primary: #10b981;
+  --color-primary-dark: #059669;
   --color-secondary: #E8A020;
-  --color-background: #FAFAF5;
+  --color-background: #f9faf7;
   --color-surface: #FFFFFF;
+  --color-mint: #ecfdf5;
   
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-inter: "Inter", sans-serif;
   
   --radius-xl: 1.5rem; /* 24px */
   --radius-2xl: 2rem;   /* 32px */
+  --radius-3xl: 2.5rem; /* 40px */
   
   --spacing-container: 24px;
   --spacing-section: 40px;
   --spacing-touch: 48px;
+
+  --shadow-button-premium: 0 10px 30px -5px rgba(16, 185, 129, 0.3);
 }
 
 @layer base {
   :root {
-    --primary: #0D5C4A;
-    --primary-dark: #0A4A3C;
+    --primary: #10b981;
+    --primary-dark: #059669;
     --secondary: #E8A020;
-    --bg: #FAFAF5;
+    --bg: #f9faf7;
     --surface: #FFFFFF;
     
     --container-padding: 24px;
@@ -31,13 +36,18 @@
   }
 
   html, body {
-    @apply h-full antialiased;
-    font-family: 'Plus Jakarta Sans', -apple-system, 'Segoe UI', sans-serif;
+    @apply h-full antialiased overflow-x-hidden;
+    font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
     background: var(--bg);
     color: #1A1C19;
     font-size: 16px;
     line-height: 1.6;
     overscroll-behavior: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply font-bold;
   }
 
   #root {
@@ -64,10 +74,18 @@
     box-shadow: 0 8px 24px rgba(13, 148, 136, 0.10);
   }
 
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/40;
+  }
+
   /* Custom Scrollbar (Hidden) */
   .hide-scrollbar::-webkit-scrollbar {
     width: 0px;
     background: transparent;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 

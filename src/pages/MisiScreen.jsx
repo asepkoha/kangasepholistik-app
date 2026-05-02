@@ -39,9 +39,9 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
   }
 
   const phaseColors = {
-    pola_pikir: 'from-primary to-teal-800',
+    pola_pikir: 'from-primary to-primary-dark',
     pola_makan: 'from-amber-500 to-amber-700',
-    pola_tidur: 'from-slate-700 to-slate-900'
+    pola_tidur: 'from-indigo-600 to-indigo-800'
   }
 
   const phaseLabels = {
@@ -51,33 +51,35 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
   }
 
   return (
-    <div className="min-h-screen bg-background-cream pb-32 animate-fade-in font-sans">
+    <div className="min-h-screen bg-background pb-32 animate-fade-in font-inter overflow-x-hidden">
       {/* Top App Bar */}
-      <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 h-16 bg-background-cream/80 backdrop-blur-md border-b border-primary/5 rounded-b-[24px]">
-        <div className="flex items-center gap-3">
+      <header className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-primary/5">
+        <div className="max-w-md mx-auto flex justify-between items-center px-6 h-20">
+          <div className="flex items-center gap-3 overflow-hidden">
+            <button 
+              onClick={() => setScreen('home')} 
+              className="w-11 h-11 flex items-center justify-center rounded-2xl bg-white text-slate-500 shadow-sm border border-slate-100 active:scale-90 transition-all shrink-0"
+              id="btn-back-home"
+            >
+              <span className="material-symbols-outlined text-xl">arrow_back</span>
+            </button>
+            <h2 className="text-[17px] font-jakarta font-extrabold text-primary tracking-tight truncate">Misi Hari Ke-{currentDay}</h2>
+          </div>
           <button 
-            onClick={() => setScreen('home')} 
-            className="w-11 h-11 flex items-center justify-center rounded-full hover:bg-primary/5 active:scale-90 transition-all"
-            id="btn-back-home"
+            onClick={() => setScreen('sos')}
+            className="px-4 h-11 min-w-[44px] bg-primary text-white rounded-2xl flex items-center justify-center text-[11px] font-black active:scale-90 transition-all shadow-md shadow-primary/20 shrink-0"
+            id="btn-sos-misi"
+            aria-label="Tombol SOS darurat"
           >
-            <span className="material-symbols-outlined text-slate-500">arrow_back</span>
+            SOS
           </button>
-          <span className="text-lg font-bold text-primary tracking-tight">Misi Hari Ke-{currentDay}</span>
         </div>
-        <button 
-          onClick={() => setScreen('sos')}
-          className="w-11 h-11 bg-[#0A4A3C] text-white rounded-xl flex items-center justify-center text-[11px] font-black active:scale-90 transition-all shadow-sm"
-          id="btn-sos-misi"
-          aria-label="Tombol SOS darurat"
-        >
-          SOS
-        </button>
       </header>
 
-      <main className="max-w-md mx-auto px-6 pt-24 space-y-8">
+      <main className="max-w-md mx-auto px-6 pt-28 space-y-8">
         {/* Phase Header Card */}
-        <div className={`p-8 rounded-[32px] bg-gradient-to-br ${phaseColors[lesson.phase]} text-white shadow-xl shadow-teal-900/10 relative overflow-hidden`}>
-          <div className="absolute -right-4 -bottom-4 opacity-10 scale-150 rotate-12">
+        <div className={`p-8 rounded-[40px] bg-gradient-to-br ${phaseColors[lesson.phase]} text-white shadow-xl shadow-emerald-900/10 relative overflow-hidden`}>
+          <div className="absolute -right-6 -bottom-6 opacity-10 scale-150 rotate-12">
             <span className="material-symbols-outlined text-9xl">spa</span>
           </div>
           
@@ -91,15 +93,15 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
             </div>
           </div>
           
-          <h1 className="text-2xl font-bold leading-tight mb-2 relative z-10">{lesson.title}</h1>
-          <p className="text-white/70 text-xs font-medium relative z-10">Dengarkan pesan hangat dari Kang Asep hari ini.</p>
+          <h1 className="text-2xl font-jakarta font-extrabold leading-tight mb-2 relative z-10">{lesson.title}</h1>
+          <p className="text-white/80 text-[13px] font-semibold relative z-10">Dengarkan pesan hangat dari Kang Asep hari ini.</p>
         </div>
 
         {/* Audio Player Card - Premium Interaction */}
-        <section className="bg-white rounded-[40px] p-8 shadow-soft-ambient border border-slate-100/50 relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-slate-50">
+        <section className="bg-white rounded-[40px] p-8 shadow-sm border border-slate-50 relative overflow-hidden group">
+          <div className="absolute top-0 left-0 w-full h-1.5 bg-slate-50">
              <div 
-                className="h-full bg-primary transition-all duration-300" 
+                className="h-full bg-primary transition-all duration-300 shadow-[0_0_12px_rgba(16,185,129,0.5)]" 
                 style={{ width: `${progress}%` }}
               ></div>
           </div>
@@ -109,9 +111,9 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
               <div className="flex justify-between items-end">
                 <div className="space-y-1">
                    <h3 className="text-[11px] font-black text-primary uppercase tracking-[0.15em]">Audio Voice Note</h3>
-                   <p className="text-[10px] text-slate-400 font-medium">Langkah demi langkah menuju pulih</p>
+                   <p className="text-[10px] text-slate-400 font-bold">Langkah demi langkah menuju pulih</p>
                 </div>
-                <span className="text-[11px] font-bold text-slate-400 bg-slate-50 px-2 py-0.5 rounded-md">
+                <span className="text-[11px] font-bold text-slate-500 bg-emerald-50/50 px-3 py-1 rounded-full border border-primary/5">
                   {currentTime} / {lesson.audioGuideDuration}
                 </span>
               </div>
@@ -120,14 +122,14 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
             <div className="flex items-center gap-10">
               <button 
                 onClick={() => { if(audioRef.current) audioRef.current.currentTime -= 10 }}
-                className="w-12 h-12 flex items-center justify-center text-slate-300 hover:text-primary transition-colors active:scale-90"
+                className="w-12 h-12 flex items-center justify-center text-slate-400 hover:text-primary transition-colors active:scale-90"
               >
-                <span className="material-symbols-outlined text-3xl">replay_10</span>
+                <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'wght' 600" }}>replay_10</span>
               </button>
               
               <button 
                 onClick={toggleAudio}
-                className={`w-24 h-24 rounded-full flex items-center justify-center transition-all duration-500 active:scale-95 shadow-2xl ${playing ? 'bg-primary-dark shadow-primary/30' : 'bg-primary shadow-primary/20 hover:scale-105'}`}
+                className={`w-24 h-24 rounded-full flex items-center justify-center transition-all duration-500 active:scale-95 shadow-2xl ${playing ? 'bg-primary shadow-primary/30 scale-105' : 'bg-primary shadow-primary/20 hover:scale-110'}`}
                 id="btn-play-audio"
               >
                 <div className="relative w-full h-full flex items-center justify-center">
@@ -142,9 +144,9 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
 
               <button 
                 onClick={() => { if(audioRef.current) audioRef.current.currentTime += 10 }}
-                className="w-12 h-12 flex items-center justify-center text-slate-300 hover:text-primary transition-colors active:scale-90"
+                className="w-12 h-12 flex items-center justify-center text-slate-400 hover:text-primary transition-colors active:scale-90"
               >
-                <span className="material-symbols-outlined text-3xl">forward_10</span>
+                <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'wght' 600" }}>forward_10</span>
               </button>
             </div>
 
@@ -156,8 +158,8 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
                 className="hidden"
               />
             ) : (
-              <div className="bg-amber-50/50 px-4 py-3 rounded-2xl border border-amber-100 w-full text-center">
-                <p className="text-[11px] text-amber-700 font-medium italic">
+              <div className="bg-emerald-50/50 px-6 py-4 rounded-[28px] border border-primary/10 w-full text-center">
+                <p className="text-[13px] text-primary font-bold italic leading-relaxed">
                   "Voice note sedang disiapkan — Kakak bisa baca ringkasannya dulu di bawah ya 🌿"
                 </p>
               </div>
@@ -168,30 +170,31 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
         {/* Content Body - Empathetic Reading */}
         <section className="space-y-6">
           <div className="flex items-center gap-3 px-2">
-            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-              <span className="material-symbols-outlined text-lg">chat_bubble</span>
+            <div className="w-9 h-9 rounded-2xl bg-primary flex items-center justify-center text-white shadow-sm shadow-primary/20">
+              <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>chat_bubble</span>
             </div>
-            <h3 className="text-xs font-black text-primary uppercase tracking-[0.2em]">Pesan Kang Asep</h3>
+            <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">Pesan Kang Asep</h3>
           </div>
           
-          <div className="bg-white rounded-[40px] p-10 shadow-soft-ambient border border-slate-50 relative">
-            <div className="absolute top-6 left-6 text-primary/5 scale-[4]">
-              <span className="material-symbols-outlined">format_quote</span>
-            </div>
+          <div className="bg-white rounded-[40px] p-8 sm:p-10 shadow-sm border border-slate-50 relative overflow-hidden">
+            {/* Background quote mark */}
+            <span className="material-symbols-outlined absolute -top-4 -left-4 text-9xl text-slate-50/80 select-none">format_quote</span>
+            
             <div className="prose prose-slate max-w-none relative z-10">
               {lesson.content.split('\n\n').map((para, i) => (
-                <p key={i} className="text-slate-700 leading-relaxed text-[17px] font-medium mb-6">
+                <p key={i} className="text-slate-700 leading-relaxed text-[17px] font-medium mb-6 last:mb-0">
                   {para}
                 </p>
               ))}
             </div>
-            <div className="pt-6 border-t border-slate-50 mt-8 flex items-center gap-3">
-               <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                  <span className="material-symbols-outlined text-slate-300">person</span>
+            
+            <div className="pt-8 border-t border-slate-50 mt-10 flex items-center gap-4">
+               <div className="w-14 h-14 rounded-[20px] bg-emerald-50 flex items-center justify-center overflow-hidden border-2 border-white shadow-sm">
+                  <span className="material-symbols-outlined text-primary text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>person</span>
                </div>
                <div>
-                  <p className="text-xs font-bold text-slate-800">Kang Asep</p>
-                  <p className="text-[10px] text-slate-400 font-medium uppercase tracking-widest">Sahabat Pemulihanmu</p>
+                  <p className="text-base font-jakarta font-bold text-slate-800">Kang Asep</p>
+                  <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest">Sahabat Pemulihanmu</p>
                </div>
             </div>
           </div>
@@ -201,8 +204,8 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
         {lesson.deepdiveTopics && lesson.deepdiveTopics.length > 0 && (
           <section className="space-y-5">
             <div className="flex items-center justify-between px-2">
-              <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Edukasi Terkait</h3>
-              <span className="text-[10px] font-bold text-primary bg-primary/5 px-2 py-0.5 rounded-full">DIPERLUKAN</span>
+              <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">Edukasi Terkait</h3>
+              <span className="text-[9px] font-black text-primary bg-primary/10 px-3 py-1 rounded-full uppercase">DIPERLUKAN</span>
             </div>
             
             <div className="grid gap-4">
@@ -210,14 +213,14 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
                 <button 
                   key={topicId}
                   onClick={() => setScreen('materi')} 
-                  className="w-full flex items-center gap-5 p-5 bg-white rounded-[28px] shadow-sm border border-slate-100 hover:border-primary/20 hover:bg-slate-50 transition-all active:scale-[0.98] group"
+                  className="w-full flex items-center gap-5 p-5 bg-white rounded-[32px] shadow-sm border border-slate-100 hover:border-primary/20 hover:bg-emerald-50/30 transition-all active:scale-[0.98] group"
                   id={`btn-deepdive-${topicId}`}
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:scale-110 transition-transform shadow-inner">
+                  <div className="w-14 h-14 rounded-[20px] bg-emerald-50 text-primary flex items-center justify-center group-hover:scale-110 transition-transform shadow-inner border border-primary/5">
                     <span className="material-symbols-outlined text-2xl">menu_book</span>
                   </div>
                   <div className="flex-1 text-left">
-                    <span className="text-[15px] font-bold text-slate-800 block mb-0.5 capitalize">{topicId.replace(/-/g, ' ')}</span>
+                    <span className="text-[15px] font-jakarta font-bold text-slate-800 block mb-0.5 capitalize">{topicId.replace(/-/g, ' ')}</span>
                     <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">BACA MODUL LENGKAP</span>
                   </div>
                   <div className="w-8 h-8 rounded-full flex items-center justify-center text-slate-300 group-hover:text-primary transition-colors">
@@ -233,13 +236,13 @@ export default function MisiScreen({ currentDay, onDone, setScreen }) {
         <div className="pt-10 pb-12">
           <button 
             onClick={onDone}
-            className="w-full h-20 bg-primary text-white rounded-[28px] font-black text-lg shadow-xl shadow-primary/20 hover:bg-[#0A4A3C] active:scale-[0.97] transition-all flex items-center justify-center gap-4"
+            className="w-full h-20 bg-primary text-white rounded-[32px] font-jakarta font-extrabold text-lg shadow-button-premium hover:bg-primary-dark active:scale-[0.97] transition-all flex items-center justify-center gap-4 group"
             id="btn-selesai-belajar"
           >
             <span>Alhamdulillah, Selesai Belajar</span>
-            <span className="material-symbols-outlined text-2xl">chevron_right</span>
+            <span className="material-symbols-outlined text-2xl group-hover:translate-x-1 transition-transform">chevron_right</span>
           </button>
-          <p className="text-center mt-6 text-[12px] text-slate-400 font-medium px-8">
+          <p className="text-center mt-6 text-[12px] text-slate-400 font-bold px-8 leading-relaxed">
             Klik tombol di atas untuk melanjutkan pengisian jurnal harianmu, Kak. 🌿
           </p>
         </div>
